@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-
 :root{
   --bg:#ffffff;--bg2:#f5f4f0;--bg3:#eeede8;
   --tx:#1a1a18;--tx2:#5f5e5a;--tx3:#888780;
@@ -33,10 +32,7 @@
     --purple-bg:#26215c;--purple-tx:#afa9ec;
   }
 }
-
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg3);color:var(--tx);min-height:100vh;}
-
-/* ── HERO ── */
 .hero{background:var(--bg);border-bottom:0.5px solid var(--bl);padding:1.5rem 1rem 1rem;}
 .hero-inner{max-width:960px;margin:0 auto;}
 .hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
@@ -45,8 +41,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .built-by{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:0.5px solid var(--bl);border-radius:99px;padding:4px 12px;font-size:11px;color:var(--tx3);flex-shrink:0;}
 .built-by strong{color:var(--tx2);font-weight:500;}
 .hero-sub{font-size:13px;color:var(--tx2);margin-bottom:14px;line-height:1.5;}
-
-/* steps */
 .steps{display:flex;gap:0;margin-bottom:16px;background:var(--bg2);border:0.5px solid var(--bl);border-radius:var(--rl);overflow:hidden;}
 .step{flex:1;padding:8px 10px;text-align:center;font-size:11px;color:var(--tx3);border-right:0.5px solid var(--bl);display:flex;align-items:center;justify-content:center;gap:5px;}
 .step:last-child{border-right:none;}
@@ -55,15 +49,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .step.active{color:var(--tx);}
 .step-label{display:none;}
 @media(min-width:480px){.step-label{display:inline;}}
-
-/* solunar bar */
 .sol-bar{background:var(--bg2);border:0.5px solid var(--bl);border-radius:var(--r);padding:8px 12px;display:flex;flex-wrap:wrap;gap:5px 10px;align-items:center;font-size:12px;}
 .sol-lbl{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:.05em;flex-shrink:0;}
 .sol-val{color:var(--tx);font-weight:500;}
 .sol-val.g{color:var(--green-tx);}
 .dot{color:var(--bm);}
-
-/* ── FILTERS ── */
 .filter-bar{background:var(--bg);border-bottom:0.5px solid var(--bl);padding:.65rem 1rem;position:sticky;top:0;z-index:50;}
 .filter-inner{max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
 .filter-label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);flex-shrink:0;}
@@ -75,15 +65,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .filter-btn.spin.active{background:var(--amber-bg);border-color:var(--amber-tx);color:var(--amber-tx);}
 .filter-divider{width:0.5px;height:20px;background:var(--bl);flex-shrink:0;}
 .filter-count{font-size:10px;color:var(--tx3);margin-left:auto;}
-
-/* ── MAIN ── */
 .main{max-width:960px;margin:0 auto;padding:1rem;}
-
-/* ── SPOT LIST ── */
 .section-label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
 .spot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-bottom:1.5rem;}
 @media(max-width:560px){.spot-grid{grid-template-columns:1fr;}}
-
 .spot-btn{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:.9rem 1rem;cursor:pointer;text-align:left;width:100%;transition:border-color .12s,opacity .15s;display:flex;flex-direction:column;gap:8px;}
 .spot-btn:hover{border-color:var(--bm);}
 .spot-btn.selected{border-color:var(--blue-tx);border-width:1.5px;}
@@ -104,10 +89,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .chip.fly{background:var(--green-bg);color:var(--green-tx);}
 .chip.spin{background:var(--amber-bg);color:var(--amber-tx);}
 .chip.both{background:var(--purple-bg);color:var(--purple-tx);}
-.chip.remote{background:var(--coral-bg);color:var(--coral-tx);}
 .no-results{text-align:center;padding:2rem;color:var(--tx3);font-size:13px;display:none;}
-
-/* ── FISH PICKER ── */
 .fish-section{margin-bottom:1.5rem;display:none;}
 .fish-grid{display:flex;flex-wrap:wrap;gap:8px;}
 .fish-btn{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:.7rem .9rem;cursor:pointer;display:flex;align-items:center;gap:8px;transition:border-color .12s;min-width:140px;}
@@ -120,8 +102,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .pole-badge.fly{background:var(--green-bg);color:var(--green-tx);}
 .pole-badge.spin{background:var(--amber-bg);color:var(--amber-tx);}
 .pole-badge.both{background:var(--purple-bg);color:var(--purple-tx);}
-
-/* ── HOW TO CARD ── */
 .how-section{display:none;margin-bottom:2rem;}
 .how-card{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);overflow:hidden;}
 .how-header{padding:1rem 1.1rem .9rem;border-bottom:0.5px solid var(--bl);display:flex;align-items:flex-start;gap:10px;}
@@ -137,28 +117,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .how-val{font-size:13px;color:var(--tx);line-height:1.55;}
 .how-val strong{font-weight:500;}
 .how-val .tag{display:inline-block;background:var(--bg2);border:0.5px solid var(--bl);border-radius:4px;font-size:11px;padding:1px 6px;margin:2px 2px 0 0;color:var(--tx2);}
-
-/* tip box */
 .tip-box{background:var(--green-bg);border-radius:var(--r);padding:.6rem .85rem;margin-top:.85rem;font-size:12px;color:var(--green-tx);display:flex;gap:7px;align-items:flex-start;line-height:1.5;}
 .tip-box i{flex-shrink:0;margin-top:1px;}
-
-/* access box */
 .access-box{background:var(--blue-bg);border-radius:var(--r);padding:.6rem .85rem;margin-top:.6rem;font-size:12px;color:var(--blue-tx);display:flex;gap:7px;align-items:flex-start;line-height:1.5;}
 .access-box i{flex-shrink:0;margin-top:1px;}
-
-/* difficulty badge */
-.diff-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:2px 8px;border-radius:99px;font-weight:500;margin-left:8px;}
+.diff-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:2px 8px;border-radius:99px;font-weight:500;margin-left:6px;}
 .diff-badge.beginner{background:var(--green-bg);color:var(--green-tx);}
 .diff-badge.intermediate{background:var(--amber-bg);color:var(--amber-tx);}
 .diff-badge.advanced{background:var(--coral-bg);color:var(--coral-tx);}
-
-/* ── REFERENCE SECTIONS ── */
 .ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:1.5rem;}
 @media(max-width:560px){.ref-grid{grid-template-columns:1fr;}}
 .ref-card{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:1rem 1.1rem;}
 .ref-title{font-size:13px;font-weight:500;color:var(--tx);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
 .ref-title i{color:var(--tx3);}
-
 .sol-table{width:100%;font-size:12px;border-collapse:collapse;}
 .sol-table th{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3);text-align:left;padding:3px 6px 5px;border-bottom:0.5px solid var(--bl);font-weight:500;}
 .sol-table td{padding:6px 6px;border-bottom:0.5px solid var(--bl);color:var(--tx);font-size:12px;vertical-align:top;}
@@ -166,7 +137,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .sol-table tr.today td{background:var(--bg2);font-weight:500;}
 .sol-table td.dim{color:var(--tx3);}
 .moon-pill{font-size:10px;background:var(--bg2);border:0.5px solid var(--bl);border-radius:99px;padding:1px 6px;color:var(--tx3);white-space:nowrap;}
-
 .hatch-list{display:flex;flex-direction:column;gap:6px;}
 .hatch-row{display:flex;align-items:flex-start;gap:8px;font-size:12px;}
 .hatch-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px;}
@@ -174,24 +144,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .hatch-dot.soon{background:var(--amber-tx);}
 .hatch-name{font-weight:500;color:var(--tx);}
 .hatch-detail{color:var(--tx3);font-size:11px;}
-
 .reg-list{display:flex;flex-direction:column;gap:0;}
 .reg-row{display:flex;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--bl);font-size:12px;align-items:flex-start;}
 .reg-row:last-child{border-bottom:none;}
 .reg-row i{font-size:14px;color:var(--amber-tx);flex-shrink:0;margin-top:1px;}
 .reg-text{color:var(--tx);line-height:1.5;}
 .reg-text strong{font-weight:500;}
-
-/* license box */
 .license-box{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:1rem 1.1rem;margin-bottom:1.5rem;}
 .license-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:10px;}
 .license-item{background:var(--bg2);border:0.5px solid var(--bl);border-radius:var(--r);padding:.6rem .8rem;}
 .license-item .li-name{font-size:12px;font-weight:500;color:var(--tx);margin-bottom:2px;}
 .license-item .li-price{font-size:13px;font-weight:600;color:var(--blue-tx);}
 .license-item .li-note{font-size:10px;color:var(--tx3);margin-top:2px;}
-
 .footer{text-align:center;font-size:11px;color:var(--tx3);padding:1.5rem 1rem 2rem;line-height:1.6;}
-
 @media(max-width:480px){
   .hero-title{font-size:18px;}
   .sol-bar{font-size:11px;}
@@ -201,22 +166,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 </style>
 </head>
 <body>
-
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-top">
-      <p class="hero-title"><i class="ti ti-ripple" aria-hidden="true"></i>Rexburg Fishing Guide</p>
-      <span class="built-by"><i class="ti ti-sparkles" aria-hidden="true" style="font-size:12px;"></i> Research by <strong>Gemini</strong> &nbsp;·&nbsp; Built with <strong>Claude</strong></span>
+      <p class="hero-title"><i class="ti ti-ripple"></i>Rexburg Fishing Guide</p>
+      <span class="built-by"><i class="ti ti-sparkles" style="font-size:12px;"></i> Research by <strong>Gemini</strong> &nbsp;·&nbsp; Built with <strong>Claude</strong></span>
     </div>
-    <p class="hero-sub">Pick a spot → pick a fish → get exact gear, bait &amp; technique. Filter by pole type to narrow results.</p>
-
+    <p class="hero-sub">Pick a spot → pick a fish → get exact gear, bait &amp; technique. Filter by pole type or water type to narrow results.</p>
     <div class="steps" id="steps">
       <div class="step active" id="step1"><span class="num">1</span><span class="step-label">Filter &amp; pick a spot</span></div>
       <div class="step" id="step2"><span class="num">2</span><span class="step-label">Pick a fish</span></div>
       <div class="step" id="step3"><span class="num">3</span><span class="step-label">How to catch it</span></div>
     </div>
-
     <div class="sol-bar">
       <span class="sol-lbl">Today</span>
       <span class="sol-val">Thu May 28 · Waxing Gibbous</span>
@@ -230,7 +191,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   </div>
 </div>
 
-<!-- FILTER BAR -->
 <div class="filter-bar">
   <div class="filter-inner">
     <span class="filter-label">Pole</span>
@@ -251,30 +211,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
-
-  <!-- STEP 1: SPOTS -->
-  <p class="section-label"><i class="ti ti-map-pin" aria-hidden="true"></i> Step 1 — choose a spot</p>
+  <p class="section-label"><i class="ti ti-map-pin"></i> Step 1 — choose a spot</p>
   <div class="spot-grid" id="spot-grid"></div>
   <div class="no-results" id="no-results"><i class="ti ti-fish-off" style="font-size:24px;display:block;margin-bottom:8px;"></i>No spots match those filters.<br>Try a different combination.</div>
 
-  <!-- STEP 2: FISH -->
   <div class="fish-section" id="fish-section">
-    <p class="section-label"><i class="ti ti-fish" aria-hidden="true"></i> Step 2 — what are you targeting?</p>
+    <p class="section-label"><i class="ti ti-fish"></i> Step 2 — what are you targeting?</p>
     <div class="fish-grid" id="fish-grid"></div>
   </div>
 
-  <!-- STEP 3: HOW TO -->
   <div class="how-section" id="how-section">
-    <p class="section-label"><i class="ti ti-hook" aria-hidden="true"></i> Step 3 — how to catch it</p>
+    <p class="section-label"><i class="ti ti-hook"></i> Step 3 — how to catch it</p>
     <div class="how-card" id="how-card"></div>
   </div>
 
-  <!-- LICENSE INFO -->
-  <p class="section-label" style="margin-top:.5rem;"><i class="ti ti-id" aria-hidden="true"></i> Idaho Fishing License (required age 14+)</p>
+  <p class="section-label" style="margin-top:.5rem;"><i class="ti ti-id"></i> Idaho Fishing License (required age 14+)</p>
   <div class="license-box">
-    <p style="font-size:12px;color:var(--tx2);margin-bottom:0;">Purchase at <a href="https://idfg.idaho.gov/licenses" style="color:var(--blue-tx);">idfg.idaho.gov/licenses</a> or any license vendor. Always carry it while fishing.</p>
+    <p style="font-size:12px;color:var(--tx2);">Purchase at <a href="https://idfg.idaho.gov/licenses" style="color:var(--blue-tx);">idfg.idaho.gov/licenses</a> or any license vendor. Always carry it while fishing.</p>
     <div class="license-grid">
       <div class="license-item"><p class="li-name">Resident Annual</p><p class="li-price">$34.50</p><p class="li-note">Idaho resident</p></div>
       <div class="license-item"><p class="li-name">Non-Resident Annual</p><p class="li-price">$108.50</p><p class="li-note">Out-of-state</p></div>
@@ -284,10 +238,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
     </div>
   </div>
 
-  <!-- REFERENCE -->
-  <p class="section-label"><i class="ti ti-book" aria-hidden="true"></i> Reference</p>
+  <p class="section-label"><i class="ti ti-book"></i> Reference</p>
   <div class="ref-grid">
-
     <div class="ref-card">
       <p class="ref-title"><i class="ti ti-moon"></i> Solunar windows this week</p>
       <div style="overflow-x:auto;">
@@ -303,7 +255,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
         </table>
       </div>
     </div>
-
     <div class="ref-card">
       <p class="ref-title"><i class="ti ti-bug"></i> Active hatches — May/June</p>
       <div class="hatch-list">
@@ -311,12 +262,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
         <div class="hatch-row"><span class="hatch-dot active"></span><div><span class="hatch-name">Blue-Winged Olive (BWO)</span> <span class="hatch-detail">#16–22 · Jan–May · Parachute Adams, Sparkle Dun, RS2</span></div></div>
         <div class="hatch-row"><span class="hatch-dot active"></span><div><span class="hatch-name">Caddis</span> <span class="hatch-detail">#10–18 · May 15–Sep · Elk Hair Caddis, X-Caddis</span></div></div>
         <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">Salmonfly / Stonefly</span> <span class="hatch-detail">#4–10 · Jun–Jul · Sofa Pillow, Chubby Chernobyl</span></div></div>
-        <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">PMD</span> <span class="hatch-detail">#14–18 · Jun–Sep · Comparadun, Sparkle Dun</span></div></div>
+        <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">PMD (Pale Morning Dun)</span> <span class="hatch-detail">#14–18 · Jun–Sep · Comparadun, Sparkle Dun</span></div></div>
         <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">Golden Stonefly</span> <span class="hatch-detail">#6–8 · Jun–Jul · Golden Stone Nymph, Yellow Sally</span></div></div>
         <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">Grasshopper / Ant</span> <span class="hatch-detail">#4–16 · Jul–Oct · Dave's Hopper, Foam Ant</span></div></div>
       </div>
     </div>
-
     <div class="ref-card">
       <p class="ref-title"><i class="ti ti-alert-triangle"></i> Key regulations</p>
       <div class="reg-list">
@@ -329,7 +279,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
         <div class="reg-row"><i class="ti ti-package"></i><span class="reg-text"><strong>High-harvest</strong> — Brook trout 25/day · Whitefish 25/day · Walleye unlimited.</span></div>
       </div>
     </div>
-
     <div class="ref-card">
       <p class="ref-title"><i class="ti ti-thermometer"></i> Water temps right now</p>
       <div class="reg-list">
@@ -337,488 +286,630 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
         <div class="reg-row"><i class="ti ti-wave-sine" style="color:var(--blue-tx)"></i><span class="reg-text"><strong>Teton River</strong> — ~48°F · Cold, clear · Nymph deep</span></div>
         <div class="reg-row"><i class="ti ti-wave-sine" style="color:var(--blue-tx)"></i><span class="reg-text"><strong>South Fork Snake</strong> — ~58°F · Warming · Browns active at dusk</span></div>
         <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Warm River</strong> — ~48°F stable · Year-round fishery</span></div>
-        <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Ririe Reservoir</strong> — Surface ~62°F · Kokanee suspend at 25–40 ft</span></div>
-        <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Henry's Lake</strong> — ~55°F · Cutthroat and hybrid active near shore</span></div>
-        <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Wakeside Lake</strong> — ~59°F · Bass in pre-spawn shoreline mode</span></div>
+        <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Ririe Reservoir</strong> — Surface ~62°F · Kokanee at 25–40 ft</span></div>
+        <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Henry's Lake</strong> — ~55°F · Cutthroat active near shore</span></div>
+        <div class="reg-row"><i class="ti ti-ripple" style="color:var(--teal-tx)"></i><span class="reg-text"><strong>Wakeside Lake</strong> — ~59°F · Bass in pre-spawn mode</span></div>
       </div>
     </div>
-
   </div>
-
   <p class="footer">Based on IDFG multi-year survey data, hatch records, and regional stocking reports.<br>Always confirm current regulations at <a href="https://idfg.idaho.gov" style="color:var(--blue-tx);">idfg.idaho.gov</a> before fishing.</p>
 </div>
 
 <script>
 const SPOTS = [
-  // ── IN & AROUND REXBURG ──
   {
     id:'cityponds', name:'Rexburg City Ponds', type:'lake', dist:'In Rexburg · 0 mi',
-    typeLabel:'6.5-acre municipal park · no gear restrictions',
-    pole:'spin', difficulty:'beginner',
-    alerts:[],
+    typeLabel:'6.5-acre municipal park · no gear restrictions', pole:'both', difficulty:'beginner', alerts:[],
     fish:[
-      {
-        id:'rainbow-city', name:'Rainbow Trout', sub:'Stocked triploids · Family Fishing Waters',
-        ico:'ti-fish', color:'blue', pole:'spin',
-        where:'Open water throughout both ponds. Near dock edges, the connecting channel, or any deeper holes.',
+      { id:'rainbow-city', name:'Rainbow Trout', sub:'Stocked triploids · consistent action', ico:'ti-fish', color:'blue', pole:'spin',
+        where:'Open water throughout. Near dock edges, connecting channel, and deeper holes.',
         rig:'Slip bobber + nightcrawler, OR benthic bait rig',
-        bait:'Nightcrawler under a bobber · Marshmallow + salmon egg combo · PowerBait (any color) · Mealworms',
-        gear:'Ultralight spin rod, 4 lb mono. No gear or bait restrictions on these ponds.',
-        technique:'Slip bobber: set depth to 2–4 ft and cast to open water. Bottom rig: slide egg sinker onto main line, tie barrel swivel, attach 18" leader with hook. Bait with nightcrawler + marshmallow — the marshmallow floats bait off the muddy bottom.',
-        bestTime:'Evening twilight (5–8 PM). Minor solunar today: 5:55–7:55 PM.',
-        tip:'Smaller pond reserved for kids under 14. Great for beginners — high stocking rate means consistent action. Handicap-accessible paths throughout.',
-        access:'Free public access. Paved parking. Handicap-accessible. Smaller pond: kids under 14 only.'
-      },
-      {
-        id:'catfish', name:'Channel Catfish', sub:'Bottom feeder · evenings',
-        ico:'ti-fish', color:'gray', pole:'spin',
-        where:'Deep holes and near any structure on the bottom. Most active at dusk and into dark.',
+        bait:'Nightcrawler under bobber · Marshmallow + salmon egg · PowerBait (any color) · Mealworms',
+        gear:'Ultralight spin rod, 4 lb mono. No gear or bait restrictions.',
+        technique:'Slip bobber: set depth 2–4 ft, cast to open water. Bottom rig: slide egg sinker on main line, barrel swivel, 18" leader, hook. Bait with nightcrawler + marshmallow — marshmallow floats bait off muddy bottom.',
+        bestTime:'Evening twilight 5–8 PM. Minor solunar today: 5:55–7:55 PM.',
+        tip:'Smaller pond reserved for kids under 14. High stocking rate means consistent action. Handicap-accessible paths.',
+        access:'Free public access. Paved parking. Handicap-accessible. Smaller pond: kids under 14 only.' },
+      { id:'catfish-city', name:'Channel Catfish', sub:'Bottom feeder · dusk and dark', ico:'ti-fish', color:'gray', pole:'spin',
+        where:'Deep holes and near bottom structure. Most active at dusk and into dark.',
         rig:'Heavy bottom rig with stout hook',
-        bait:'Chicken liver · nightcrawler · stink bait · cut bait',
-        gear:'Medium spin rod, 10–15 lb line. Stout size 2/0–4/0 hook.',
-        technique:'Cast to any deep hole. Let it sit — catfish find food by smell, not sight. Give it 15–20 minutes before moving.',
+        bait:'Chicken liver · stink bait · nightcrawler · cut bait',
+        gear:'Medium spin rod, 10–15 lb line. Size 2/0–4/0 hook.',
+        technique:'Cast to any deep hole. Let it sit — catfish find food by smell. Give 15–20 minutes per spot before moving.',
         bestTime:'Evening into dark.',
-        tip:'No gear restrictions on these ponds. Catfish are excellent eating and make a great target if trout are slow.',
-        access:'Free public access.'
-      }
+        tip:'No gear restrictions on these ponds. Catfish excellent eating and great target when trout are slow.',
+        access:'Free public access. No night-fishing restrictions at city ponds.' },
+      { id:'perch-city', name:'Yellow Perch', sub:'Schooling fish · light jig or worm', ico:'ti-fish', color:'amber', pole:'spin',
+        where:'Near bottom in deeper water. Perch school densely — find one, find many.',
+        rig:'Small jig or drop-shot with worm',
+        bait:'Nightcrawler on small hook · Mealworms · 1/16 oz jig tipped with worm',
+        gear:'Ultralight rod, 4 lb mono. Keep jig small.',
+        technique:'Drop jig to bottom, lift 4–6 inches, drop back. Repeat slowly. Set hook quickly — perch steal bait fast.',
+        bestTime:'Mid-morning through afternoon.',
+        tip:'Not always present in numbers, but worth a few casts when trout are slow. Good intro fish for kids.',
+        access:'Free public access.' }
     ]
   },
   {
     id:'wakeside', name:'Wakeside Lake', type:'lake', dist:'In Rexburg · 0 mi',
-    typeLabel:'Private spring-fed stillwater · day-use fee',
-    pole:'spin', difficulty:'intermediate',
-    alerts:[],
+    typeLabel:'Private spring-fed stillwater · day-use fee', pole:'spin', difficulty:'intermediate', alerts:[],
     fish:[
-      {
-        id:'bass', name:'Largemouth Bass', sub:'Primary target',
-        ico:'ti-fish', color:'teal', pole:'spin',
-        where:'Cast parallel to shoreline along weed lines, brush piles, and rocky structure. Clear water (8–10 ft visibility) — stay back from the bank.',
+      { id:'bass-wake', name:'Largemouth Bass', sub:'Primary target · clear water sight fishing', ico:'ti-fish', color:'teal', pole:'spin',
+        where:'Weed lines, brush piles, rocky shoreline. Clear water (8–10 ft visibility) — stay back from bank.',
         rig:'Wacky rig (weightless) or drop-shot',
-        bait:'4" Yamamoto Senko in Green Pumpkin · Jackall Crosstail Shad (Baby Bass) · Roboworm 4.5" Straight Tail (Aaron\'s Pro Shad)',
-        gear:'Light spinning rod, 6–8 lb fluorocarbon. Size 1 finesse wide-gap hook with elastomer O-ring at center of worm.',
-        technique:'Cast parallel to shore. Let wacky rig fall slowly to bottom. Hop 1–2 ft, pause, let fall again. For drop-shot: walk slowly back with subtle rod-tip twitches near submerged brush.',
-        bestTime:'Dawn (5–8 AM) and late evening.',
-        tip:'In clear water, downsize your leader and go natural colors. The O-ring prevents the hook tearing through the Senko on the strike.',
-        access:'Private. Day-use fee: $10 half-day, $20 full-day. Bank fishing only.'
-      },
-      {
-        id:'trout-wakeside', name:'Rainbow Trout', sub:'Secondary target',
-        ico:'ti-fish', color:'blue', pole:'spin',
-        where:'Mid-water column and near surface in cooler morning hours. Clear water lets you sight-fish cruising trout.',
-        rig:'Slip bobber rig or small inline spinner',
+        bait:"4\" Yamamoto Senko in Green Pumpkin · Jackall Crosstail Shad (Baby Bass) · Roboworm 4.5\" Straight Tail",
+        gear:'Light spinning rod, 6–8 lb fluorocarbon. Size 1 finesse wide-gap hook with O-ring at center of worm.',
+        technique:'Cast parallel to shore. Let wacky rig fall slowly to bottom. Hop 1–2 ft, pause, fall again. Drop-shot: walk slowly with subtle rod-tip twitches near submerged brush.',
+        bestTime:'Dawn 5–8 AM and late evening.',
+        tip:'In clear water, downsize leader and go natural colors. O-ring prevents hook tearing through Senko on the strike.',
+        access:'Private. Day-use fee: $10 half-day, $20 full-day. Bank fishing only.' },
+      { id:'rainbow-wake', name:'Rainbow Trout', sub:'Spring-fed · sight fish cruising fish', ico:'ti-fish', color:'blue', pole:'spin',
+        where:'Mid-water column and near surface in cooler morning hours.',
+        rig:'Slip bobber or small inline spinner',
         bait:'Nightcrawler under slip bobber · PowerBait (rainbow or chartreuse) · small gold inline spinner',
         gear:'Ultralight spin rod, 4–6 lb mono.',
-        technique:'Position bobber stop to suspend bait 2–4 ft down. Cast to open water. Retrieve spinner slow and steady just under the surface.',
+        technique:'Suspend bait 2–4 ft down on slip bobber. Cast to open water away from bass structure. Retrieve spinner slow and steady just under surface.',
         bestTime:'Early morning when water is coolest.',
-        tip:'Spring monitoring shows water averaging 59°F — trout are active and feeding aggressively.',
-        access:'Private. Day-use fee applies.'
-      }
+        tip:'Water averages 59°F — trout are active and feeding aggressively in pre-spawn mode.',
+        access:'Private. Day-use fee applies. No boat required — bank access all around.' },
+      { id:'smallmouth-wake', name:'Smallmouth Bass', sub:'Documented in surveys · rocky structure', ico:'ti-fish', color:'purple', pole:'spin',
+        where:'Rocky patches and any harder substrate near the shoreline. Less common than largemouth here.',
+        rig:'Drop-shot or tube jig',
+        bait:"3\" tube jig (green pumpkin or smoke) · Ned rig with Zman TRD · Small crayfish-colored crankbait",
+        gear:'Light spin rod, 6–8 lb fluoro.',
+        technique:'Target harder bottom near rocks. Smallmouth are more aggressive than largemouth — faster retrieves often trigger strikes. Drag a tube along the bottom near any rocky patch.',
+        bestTime:'Mid-morning.',
+        tip:'Smallmouth are documented in the spring-fed lakes near Rexburg. Not the main target but a surprise bonus when they show up.',
+        access:'Private. Day-use fee applies.' }
     ]
   },
   {
     id:'southcanal', name:'South Branch Rexburg Canal', type:'canal', dist:'Near Rexburg · ~2 mi',
-    typeLabel:'Irrigation canal · accessible via road crossings',
-    pole:'spin', difficulty:'beginner',
-    alerts:[],
+    typeLabel:'Irrigation canal · public road crossings', pole:'spin', difficulty:'beginner', alerts:[],
     fish:[
-      {
-        id:'trout-canal', name:'Rainbow Trout', sub:'Wild fish from Teton River',
-        ico:'ti-fish', color:'blue', pole:'spin',
-        where:'Fish stack near road crossings, bridge shadows, and any current breaks.',
+      { id:'rainbow-canal', name:'Rainbow Trout', sub:'Wild fish from Teton River drainage', ico:'ti-fish', color:'blue', pole:'spin',
+        where:'Stack near road crossings, bridge shadows, and any current breaks. Move seasonally in from South Fork Teton.',
         rig:'Floating bait rig or inline spinner',
-        bait:'Nightcrawler on a floating rig · Berkley PowerBait · small gold spinner',
+        bait:'Nightcrawler on floating rig · Berkley PowerBait · small gold spinner',
         gear:'Light spin rod, 6 lb mono.',
-        technique:'Cast upstream from a bridge crossing, let bait drift through the bridge shadow. Spinners: cast downstream at an angle, retrieve across current.',
-        bestTime:'Early dawn (5–8 AM).',
-        tip:'Verify property boundaries before leaving bridge rights-of-way. Texas Slough and Bannock Jim Slough nearby also worth hitting for perch.',
-        access:'Free via public road/bridge rights-of-way. Check property boundaries.'
-      }
+        technique:'Cast upstream from a bridge crossing, let bait drift through bridge shadow. Spinners: cast downstream at angle, retrieve across current. Work every crossing before moving.',
+        bestTime:'Early dawn 5–8 AM.',
+        tip:'Verify property boundaries before leaving bridge rights-of-way.',
+        access:'Free via public road/bridge rights-of-way. Check property boundaries before stepping off road.' },
+      { id:'perch-canal', name:'Yellow Perch', sub:'Texas Slough and Bannock Jim Slough', ico:'ti-fish', color:'amber', pole:'spin',
+        where:'Connected slough systems nearby. Perch concentrate in slow backwater areas.',
+        rig:'Small jig or worm on light hook',
+        bait:'Nightcrawler chunk · Mealworm · Small jig tipped with worm piece',
+        gear:'Ultralight rod, 4 lb mono.',
+        technique:'Fish slow, deep pockets of water near the main canal. Drop jig to bottom and work it with subtle lifts. Perch school up — when you find them you can catch many quickly.',
+        bestTime:'Mid-morning through afternoon.',
+        tip:'Texas Slough and Bannock Jim Slough nearby are worth hitting specifically for perch. Quick action fish.',
+        access:'Free via public road crossings. Slough access may be limited by private land — stay on public ROW.' },
+      { id:'pumpkinseed-canal', name:'Pumpkinseed Sunfish', sub:'Warm backwater pockets', ico:'ti-fish', color:'coral', pole:'spin',
+        where:'Slow warm backwater pockets of the canal and connected sloughs. Documented in lower Teton area.',
+        rig:'Small hook with worm or tiny jig',
+        bait:'Nightcrawler piece · Waxworm · Small 1/32 oz jig',
+        gear:'Ultralight rod, 2–4 lb mono. Tiny hook (size 6–10).',
+        technique:'Drop bait near any submerged vegetation or slow pocket. Pumpkinseeds are curious and bite readily. Great for kids.',
+        bestTime:'Afternoon when water is warmest.',
+        tip:'Pumpkinseed are documented in the South Fork Teton River system. Beautiful, colorful fish — fun bonus catch.',
+        access:'Free via canal road crossings.' }
     ]
   },
-
-  // ── TETON RIVER ──
   {
     id:'teton-upper', name:'Teton River — Upper Valley', type:'river', dist:'~25 mi east · Driggs',
-    typeLabel:'Low-gradient meander · Driggs to Felt Canyon',
-    pole:'fly', difficulty:'intermediate',
-    alerts:['CLOSES June 1–30'],
+    typeLabel:'Low-gradient meander · Driggs to Felt Canyon', pole:'fly', difficulty:'intermediate', alerts:['CLOSES June 1–30'],
     fish:[
-      {
-        id:'cutthroat', name:'Yellowstone Cutthroat', sub:'Native · catch-and-release only',
-        ico:'ti-fish', color:'coral', pole:'fly',
-        where:'Undercut willow banks, deep bends, and slow current seams. Average 12–16". Look for shade in midday.',
+      { id:'cutthroat-upper', name:'Yellowstone Cutthroat', sub:'Native · mandatory catch-and-release', ico:'ti-fish', color:'coral', pole:'fly',
+        where:'Undercut willow banks, deep bends, slow current seams. Average 12–16". Look for shade in midday.',
         rig:'Dry fly or nymph under indicator',
         bait:'Midges #18–22 · BWOs #16–22 · Caddis #10–18 · Comparadun or Sparkle Dun for PMDs',
-        gear:'9-ft 5-weight fly rod. Tapered 4X–6X leader. Match the hatch — check what\'s flying before you tie on.',
-        technique:'Present upstream, dead-drift through the seam. Approach from downstream, crouch low — cutthroat in clear water spook easily. Short casts outperform long ones here.',
-        bestTime:'Mid-morning PMD hatches (9 AM–12 PM). Major solunar today: 10:26 AM.',
+        gear:'9-ft 5-weight fly rod. Tapered 4X–6X leader. Match the hatch before you tie on.',
+        technique:'Present upstream, dead-drift through the seam. Approach from downstream, crouch low — cutthroat in clear water spook easily. Short casts outperform long ones.',
+        bestTime:'Mid-morning PMD hatches 9 AM–12 PM. Major solunar today: 10:26 AM.',
         tip:'Mandatory C&R on all cutthroat. ID by bright red or orange slash marks under the jaw. Wet hands before handling.',
-        access:'Wade access via pull-offs and public road ends. Season Jul 1–Nov 30 above canyon.'
-      }
+        access:'Wade access via pull-offs and public road ends. Season Jul 1–Nov 30 above canyon.' },
+      { id:'brook-upper', name:'Brook Trout', sub:'Headwaters and cold tributaries', ico:'ti-fish', color:'teal', pole:'fly',
+        where:'Shaded tributary mouths and coldest stretches of upper river. Brook trout prefer slightly cooler water than cutthroat.',
+        rig:'Small dry fly or wet fly on 3–4 weight rod',
+        bait:'Royal Wulff #12–14 · Elk Hair Caddis #14 · Small Wooly Bugger #10',
+        gear:'3–4 weight fly rod, 4X–5X tippet.',
+        technique:'Brook trout hit aggressively — no need for the delicate presentations cutthroat require. An attractor dry cast near shaded banks works well.',
+        bestTime:'Morning.',
+        tip:'Brook trout 25/day bag limit. Beautiful fish — easily identified by worm-like vermiculations on the back.',
+        access:'Same wade access as cutthroat. Tributaries off main river.' },
+      { id:'whitefish-upper', name:'Mountain Whitefish', sub:'Underrated but plentiful', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Faster riffles and gravel runs throughout the river. Often outnumber trout in surveys.',
+        rig:'Nymph under indicator or soft hackle wet fly',
+        bait:'Hare\'s Ear nymph #12–16 · Pheasant Tail #14–18 · Soft hackle wet fly #12–14',
+        gear:'5-weight fly rod, 4X tippet. Same setup as nymphing for trout.',
+        technique:'High-stick nymph through faster gravel runs. Whitefish feed near the bottom in riffles. Soft hackle on the swing is extremely effective.',
+        bestTime:'All day — whitefish feed consistently regardless of hatch activity.',
+        tip:'Often overlooked but whitefish are excellent to eat (smoked especially). 25/day limit. Great for beginners learning to nymph.',
+        access:'Same as above.' }
     ]
   },
   {
     id:'teton-canyon', name:'Teton River — Felt Canyon', type:'river', dist:'~30 mi east · remote',
-    typeLabel:'High-gradient basalt canyon · remote access',
-    pole:'fly', difficulty:'advanced',
-    alerts:[],
+    typeLabel:'High-gradient basalt canyon · hike-in access', pole:'fly', difficulty:'advanced', alerts:[],
     fish:[
-      {
-        id:'rainbow-canyon', name:'Wild Rainbow Trout', sub:'Largest fish in the Teton drainage',
-        ico:'ti-fish', color:'blue', pole:'fly',
-        where:'Fast pocket water behind boulders, deep plunge pools, and undercut canyon walls.',
+      { id:'rainbow-canyon', name:'Wild Rainbow Trout', sub:'Largest fish in the Teton drainage', ico:'ti-fish', color:'blue', pole:'fly',
+        where:'Fast pocket water behind boulders, deep plunge pools, undercut canyon walls.',
         rig:'5–6 weight fly rod with streamers or large dry flies',
         bait:'Stimulator #8–12 · Elk Hair Caddis #12–14 · Articulated streamer (black/olive)',
         gear:'5–6 weight rod, 3X–4X tippet. Roll cast ability essential — canyon walls restrict backcast.',
-        technique:'High-stick nymphing in plunge pools. Strip streamers across the current and let them swing. Present dry flies to any visible rise.',
+        technique:'High-stick nymphing in plunge pools. Strip streamers across current and let swing. Present dry flies to any visible rise in pocket water.',
         bestTime:'Dawn and dusk. Overcast days produce all-day feeding.',
-        tip:'Limited road access rewards the effort. Wade carefully on slick basalt. Plan your exit before fishing deep into the canyon.',
-        access:'Hike-in only. No established trailhead — follow river from lower pull-offs. Felt Canyon Rd.'
-      },
-      {
-        id:'cuttbow', name:'Cutthroat-Rainbow Hybrid (Cutt-bow)', sub:'Aggressive fighters',
-        ico:'ti-fish', color:'purple', pole:'fly',
-        where:'Same runs as the wild rainbows but often in faster, shallower riffles. Very aggressive strikers.',
+        tip:'Limited road access rewards the effort. Wade carefully on slick basalt. Plan your exit before fishing deep into canyon.',
+        access:'Hike-in only via Felt Canyon Rd. No established trailhead. Follow river from lower pull-offs.' },
+      { id:'cuttbow-canyon', name:'Cutthroat-Rainbow Hybrid (Cutt-bow)', sub:'Aggressive fighters in fast water', ico:'ti-fish', color:'purple', pole:'fly',
+        where:'Faster, shallower riffles. Very aggressive strikers.',
         rig:'Large attractor dry fly or streamer',
         bait:'Chubby Chernobyl #8–10 · Sofa Pillow #4–6 · Bright streamer patterns',
-        gear:'5-weight fly rod, 3X leader. These fish hit hard — don\'t go too light.',
-        technique:'Cover water fast with an attractor dry. Cutt-bows aren\'t selective — confidence cast a Chernobyl along the bank.',
+        gear:'5-weight fly rod, 3X leader.',
+        technique:'Cover water fast with an attractor dry. Cutt-bows are not selective — confidence cast a Chernobyl along the bank.',
         bestTime:'Midday when stoneflies are active (June+).',
-        tip:'When you hook one, be ready — cutt-bows run fast and jump. Keep your rod tip up.',
-        access:'Hike-in via Felt Canyon. Challenging wading on basalt.'
-      }
+        tip:'When you hook one, be ready — cutt-bows run fast and jump. Keep rod tip up.',
+        access:'Hike-in via Felt Canyon.' },
+      { id:'whitefish-canyon', name:'Mountain Whitefish', sub:'Abundant in canyon riffles', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Gravel runs and riffles between the big pools.',
+        rig:'Nymph under indicator',
+        bait:'Hare\'s Ear #14 · Pheasant Tail #16 · Zebra Midge #18',
+        gear:'5-weight fly rod, 4X tippet.',
+        technique:'Nymph the riffles between plunge pools. Whitefish are excellent indicators of holding lanes — where they feed, trout are often nearby.',
+        bestTime:'All day.',
+        tip:'25/day limit. Worth keeping for the smoker if you make the hike.',
+        access:'Same hike-in access.' }
     ]
   },
-
-  // ── HENRY'S FORK ──
-  {
-    id:'henryfork', name:"Henry's Fork — Beaver Dick Park", type:'river', dist:'~4.5 mi west',
-    typeLabel:"World-class tailwater · 4.5 mi west of Rexburg",
-    pole:'fly', difficulty:'advanced',
-    alerts:[],
-    fish:[
-      {
-        id:'brown-henry', name:'Brown Trout', sub:'Best at dusk with streamers',
-        ico:'ti-fish', color:'amber', pole:'fly',
-        where:'Deep gravel bars, slow-water eddies, and undercut bank structure. Big browns go nocturnal in summer.',
-        rig:'Large streamer on 7–8 weight fly rod, or trolled minnow plug',
-        bait:"Articulated streamer (brown, black, or olive) · Sculpin pattern · Large Wooly Bugger #4–6",
-        gear:'7–8 weight fly rod, 2X–3X leader. Stripping basket helps manage line.',
-        technique:'Cast across-stream at dusk, let streamer swing downstream, then strip back in short, aggressive pulses. Browns hit on the swing or on the first strip. Fish the last hour of light hard.',
-        bestTime:'Dusk. Minor solunar today: 5:55–7:55 PM.',
-        tip:'400 acres of BLM public land gives excellent access. Mid-summer: fish hold deep — switch to deep nymphing until evening.',
-        access:'Free. Beaver Dick Park on Hwy 33. BLM land extends 400 acres. No boat ramp at this section.'
-      },
-      {
-        id:'rainbow-henry', name:'Rainbow Trout', sub:'Mid-morning dry fly',
-        ico:'ti-fish', color:'blue', pole:'fly',
-        where:'Main channel current seams and gravel bar tailouts. High-volume slow current — trout inspect flies carefully.',
-        rig:'5-weight fly rod, dry fly or PMD nymph',
-        bait:'PMD Comparadun #14–16 · Elk Hair Caddis #14 · Parachute Adams #14–18',
-        gear:"9-ft 5-weight, 5X tippet for dries. Henry's Fork fish are notoriously selective.",
-        technique:"Long, drag-free drift is everything. Use a reach cast or pile cast for extra drift time. Present from downstream and below. Match the hatch exactly — size matters more than pattern.",
-        bestTime:'Mid-morning solunar window today: 10:26 AM–12:26 PM.',
-        tip:"The Henry's Fork is world-renowned for technical dry fly. If fish aren't rising, nymph a two-fly rig (midge + BWO) through the seams.",
-        access:'Free via Beaver Dick Park, Hwy 33. Also accessible from Island Park downstream.'
-      }
-    ]
-  },
-  {
-    id:'warmslough', name:"Henry's Fork — Warm Slough", type:'river', dist:'~11 mi west',
-    typeLabel:'Slow side channel · float tube or bank',
-    pole:'fly', difficulty:'intermediate',
-    alerts:[],
-    fish:[
-      {
-        id:'rainbow-warmslough', name:'Rainbow Trout', sub:'Slow-water technical fishing',
-        ico:'ti-fish', color:'blue', pole:'fly',
-        where:'Cold undercurrents in slow side channel provide summer trout refuge. Fish hold deep in midday.',
-        rig:'Float tube + 4-5 weight fly rod',
-        bait:'Midge #18–22 · Small BWO #18–20 · Soft hackle wet flies',
-        gear:'4–5 weight fly rod. Float tube lets you cover the full slough quietly.',
-        technique:'Slow, deliberate approach. Dead-drift midges through the slow current seams. In midday heat, switch to a deep nymph rig — fish suspend in the cool undercurrents.',
-        bestTime:'Morning and evening. Avoid bright midday sun.',
-        tip:'Heavy mosquito, fly, and bee activity in summer — bring bug spray. Float tube strongly recommended.',
-        access:'Free. Pull off Hwy 33 at ~11 miles west of Rexburg. Rough bank access.'
-      }
-    ]
-  },
-
-  // ── SOUTH FORK SNAKE ──
   {
     id:'southfork', name:'South Fork Snake — Lorenzo to Menan', type:'river', dist:'~8 mi south · float',
-    typeLabel:"8-mile 'Section 5' float · warm, high turbidity",
-    pole:'both', difficulty:'intermediate',
-    alerts:[],
+    typeLabel:"8-mile 'Section 5' float · warm, turbid water", pole:'both', difficulty:'intermediate', alerts:[],
     fish:[
-      {
-        id:'brown', name:'Trophy Brown Trout', sub:'Dominant species here',
-        ico:'ti-fish', color:'amber', pole:'both',
-        where:'Deep outside bends, clay undercut banks, and cottonwood logjams.',
+      { id:'brown-sf', name:'Trophy Brown Trout', sub:'Dominant species · dusk and overcast', ico:'ti-fish', color:'amber', pole:'both',
+        where:'Deep outside bends, clay undercut banks, cottonwood logjams.',
         rig:'Articulated streamer (fly) or large minnow plug (spin)',
-        bait:"Articulated streamer (black/olive, 4–6\") · Trolled Rapala · Foam hopper (late summer)",
-        gear:'7–9 weight fly rod for streamers, or medium-heavy spin rod for plugs. 10–15 lb fluoro.',
-        technique:"Cast tight to the bank — within inches of the logjam or undercut. Strip streamer fast then pause. For spin: troll minnow plugs along clay banks. Late summer: big browns migrate from Henry's Fork seeking cooler water.",
-        bestTime:'Dusk (6–9 PM) and overcast afternoons. Minor solunar today: 5:55–7:55 PM.',
-        tip:'This section runs warmer and cloudier than upstream — exactly what big browns prefer. Float from Lorenzo boat ramp to Menan.',
-        access:'Lorenzo boat ramp west of US-20 north of Rigby. $3 BLM fee. Day use. Float or wade bank.'
-      }
+        bait:"Articulated streamer black/olive 4–6\" · Trolled Rapala · Foam hopper (late summer)",
+        gear:'7–9 weight fly rod for streamers, or medium-heavy spin rod. 10–15 lb fluoro.',
+        technique:'Cast tight to the bank — within inches of logjam or undercut. Strip streamer fast then pause. For spin: troll minnow plugs along clay banks.',
+        bestTime:'Dusk 6–9 PM and overcast afternoons. Minor solunar today: 5:55–7:55 PM.',
+        tip:'Runs warmer and cloudier than upstream — exactly what big browns prefer. Float from Lorenzo boat ramp to Menan.',
+        access:'Lorenzo boat ramp west of US-20 north of Rigby. $3 BLM fee. Day use only.' },
+      { id:'rainbow-sf', name:'Rainbow Trout', sub:'Mid-river seams and gravel bars', ico:'ti-fish', color:'blue', pole:'both',
+        where:'Mid-river current seams and gravel bar tailouts. Less common than browns but present throughout.',
+        rig:'Dry-dropper rig (fly) or spinner (spin)',
+        bait:'Elk Hair Caddis + Hare\'s Ear dropper · Inline spinner · Small crankbait',
+        gear:'5-weight fly rod or light spin rod.',
+        technique:'Float and cast to rising fish in tailouts. Spinners across current for non-rising fish. Cover water from the boat.',
+        bestTime:'Mid-morning solunar window: 10:26 AM–12:26 PM.',
+        tip:'Cutthroat trout are mandatory C&R on this section — ID by red jaw slash before keeping any trout.',
+        access:'Float access recommended. Lorenzo to Menan, 8 miles.' },
+      { id:'cutthroat-sf', name:'Cutthroat Trout', sub:'C&R only — ID by red jaw slash', ico:'ti-fish', color:'coral', pole:'both',
+        where:'Cooler tributary confluences and deeper pools.',
+        rig:'Nymph or attractor dry fly',
+        bait:'Parachute Adams #14 · Stimulator #10 · Hare\'s Ear nymph #12',
+        gear:'5-weight fly rod.',
+        technique:'Present near confluences and cooler water pockets. Cutthroat congregate where cooler water enters the warmer South Fork.',
+        bestTime:'Morning.',
+        tip:'Mandatory catch-and-release. Bright red slash under jaw is unmistakable. Wet hands before handling, keep in water.',
+        access:'Float or wade from Lorenzo.' },
+      { id:'whitefish-sf', name:'Mountain Whitefish', sub:'Fast riffles throughout', ico:'ti-fish', color:'gray', pole:'both',
+        where:'Faster riffles and gravel bars along the float corridor.',
+        rig:'Nymph or small spinner',
+        bait:'Hare\'s Ear #14 · Small spoon · Worm on light hook',
+        gear:'Any light tackle.',
+        technique:'Nymph through fast water or drag a small spoon through riffles.',
+        bestTime:'All day.',
+        tip:'25/day limit. Excellent smoked or fried. Easy to catch in numbers while float fishing.',
+        access:'Float access from Lorenzo.' },
+      { id:'smallmouth-sf', name:'Smallmouth Bass', sub:'Rocky banks and structure', ico:'ti-fish', color:'purple', pole:'spin',
+        where:'Rocky points and harder substrate banks. Documented in the lower Teton/South Fork drainage.',
+        rig:'Tube jig or small crankbait',
+        bait:"3\" tube jig (green pumpkin) · Crayfish-color crankbait · Small Rapala",
+        gear:'Medium spin rod, 8–10 lb mono.',
+        technique:'Cast to rocky structure from the boat and retrieve at medium speed. Smallmouth will chase lures aggressively.',
+        bestTime:'Morning and evening near rocky banks.',
+        tip:'Smallmouth bass documented in 2024 South Fork Teton surveys. Bonus catch while float fishing for browns.',
+        access:'Float access from Lorenzo.' }
     ]
   },
-
-  // ── RESERVOIRS ──
+  {
+    id:'henryfork-beaver', name:"Henry's Fork — Beaver Dick Park", type:'river', dist:'~4.5 mi west',
+    typeLabel:'World-class tailwater · BLM public land', pole:'fly', difficulty:'advanced', alerts:[],
+    fish:[
+      { id:'brown-hf', name:'Brown Trout', sub:'Trophy fish · dusk streamers', ico:'ti-fish', color:'amber', pole:'fly',
+        where:'Deep gravel bars, slow-water eddies, undercut bank structure.',
+        rig:'Large streamer on 7–8 weight fly rod',
+        bait:"Articulated streamer (brown, black, olive) · Sculpin pattern · Wooly Bugger #4–6",
+        gear:'7–8 weight fly rod, 2X–3X leader.',
+        technique:'Cast across-stream at dusk, let streamer swing downstream, strip back in short aggressive pulses. Browns hit on the swing or first strip.',
+        bestTime:'Dusk. Minor solunar today: 5:55–7:55 PM.',
+        tip:'400 acres of BLM public land gives excellent access. Mid-summer: deep nymph until evening.',
+        access:'Free. Beaver Dick Park on Hwy 33. BLM land 400 acres adjacent.' },
+      { id:'rainbow-hf', name:'Rainbow Trout', sub:'Mid-morning dry fly · selective feeders', ico:'ti-fish', color:'blue', pole:'fly',
+        where:'Main channel current seams and gravel bar tailouts.',
+        rig:'5-weight fly rod, dry fly or PMD nymph',
+        bait:'PMD Comparadun #14–16 · Elk Hair Caddis #14 · Parachute Adams #14–18',
+        gear:"9-ft 5-weight, 5X tippet. Henry's Fork fish are famously selective.",
+        technique:"Long drag-free drift is everything. Reach cast or pile cast for extra drift time. Present from downstream. Match the hatch exactly — size matters more than pattern.",
+        bestTime:'Mid-morning solunar window: 10:26 AM–12:26 PM.',
+        tip:"Henry's Fork is world-renowned for technical dry fly. If fish aren't rising, nymph a two-fly rig (midge + BWO).",
+        access:'Free via Beaver Dick Park, Hwy 33.' },
+      { id:'cutthroat-hf', name:'Cutthroat Trout', sub:'Mixed in with rainbows', ico:'ti-fish', color:'coral', pole:'fly',
+        where:'Same seams and tailouts as rainbows. Often mixed in the same pods.',
+        rig:'5-weight, same dry fly setup as rainbow',
+        bait:'Same PMD and caddis patterns as rainbow',
+        gear:'5-weight, 5X tippet.',
+        technique:'Identical approach to rainbow fishing here. Cutthroat sometimes less selective than rainbows — if a rainbow refuses your fly, it may still take.',
+        bestTime:'Mid-morning hatch times.',
+        tip:'Cutthroat documented in the Henry\'s Fork drainage. C&R mandatory — identify by red jaw slash.',
+        access:'Free. Beaver Dick Park.' },
+      { id:'whitefish-hf', name:'Mountain Whitefish', sub:'Abundant · 25/day limit', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Riffles and faster water between the big trout pools.',
+        rig:'Nymph rig — same as trout setup',
+        bait:'Hare\'s Ear #12–14 · Pheasant Tail #16 · Prince Nymph #14',
+        gear:'5-weight rod, 4X tippet.',
+        technique:'Nymph through fast water. Whitefish feed aggressively and will take the same flies as trout. Often the first species beginners catch here.',
+        bestTime:'All day throughout the year.',
+        tip:"Great intro fish for learning nymphing on the Henry's Fork before targeting the selective trout. 25/day.",
+        access:'Free. Beaver Dick Park.' }
+    ]
+  },
+  {
+    id:'warmriver', name:'Warm River', type:'river', dist:'~35 mi north · Ashton',
+    typeLabel:'Geothermal spring-fed tributary · year-round', pole:'fly', difficulty:'intermediate', alerts:[],
+    fish:[
+      { id:'rainbow-wr', name:'Rainbow Trout', sub:'Hatchery near campground · wild upstream', ico:'ti-fish', color:'blue', pole:'fly',
+        where:'Lower canyon near Warm River Campground: stocked fish. Upper canyon: wild, selective fish.',
+        rig:'3-weight fly rod — nymph under indicator or dry fly',
+        bait:'Zebra Midge #18–22 (black/silver rib) · RS2 · Small Parachute Adams',
+        gear:'3-weight fly rod, 5X–6X tippet.',
+        technique:'Nymph deep under a small indicator. Dead-drift through main current seam. For dry fly: cast upstream and ride with no drag.',
+        bestTime:'Midday — stable thermal temps make this productive when other rivers are blown out.',
+        tip:"Idaho's best cold-weather fishery. When spring runoff blows out the Teton, Warm River is clear and fishable.",
+        access:'Free. Warm River Campground off US-20. Year-round open.' },
+      { id:'brown-wr', name:'Brown Trout', sub:'Wild fish in upper canyon', ico:'ti-fish', color:'amber', pole:'fly',
+        where:'Upper canyon sections away from the campground. Wild brown trout documented in Warm River.',
+        rig:'4-weight fly rod with streamer or nymph',
+        bait:'Small Wooly Bugger #8–10 · Hare\'s Ear nymph · Zebra Midge',
+        gear:'4-weight rod, 3X–4X tippet.',
+        technique:'Streamers through deeper canyon runs. Nymph through slower inside bends where browns hold.',
+        bestTime:'Dawn and dusk.',
+        tip:'Wild brown trout documented in Warm River surveys. Less pressured than the stocked fish near the campground.',
+        access:'Hike upstream from campground. No established trail — follow the river.' },
+      { id:'brook-wr', name:'Brook Trout', sub:'Cold upper sections', ico:'ti-fish', color:'teal', pole:'fly',
+        where:'Coldest headwater sections. Brook trout documented in Warm River drainage.',
+        rig:'Small dry fly or wet fly, 3-weight rod',
+        bait:'Royal Wulff #12–14 · Elk Hair Caddis #14 · Small Wooly Bugger',
+        gear:'3-weight rod, 4X–5X tippet.',
+        technique:'Brook trout hit attractor dries readily. Fish the coldest, most shaded sections.',
+        bestTime:'Morning.',
+        tip:'25/day bag limit on brook trout. Great eating.',
+        access:'Same as brown trout — hike upstream.' },
+      { id:'whitefish-wr', name:'Mountain Whitefish', sub:'Riffles throughout', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Faster riffles and gravel runs throughout the river.',
+        rig:'Nymph under indicator',
+        bait:'Hare\'s Ear #14 · Pheasant Tail #16',
+        gear:'3–5 weight rod, 4X tippet.',
+        technique:'Nymph through riffles. Whitefish present year-round due to stable temperatures.',
+        bestTime:'All day.',
+        tip:'Whitefish feed all day regardless of hatch — reliable action when trout are off.',
+        access:'Free. Year-round.' }
+    ]
+  },
   {
     id:'ririe', name:'Ririe Reservoir', type:'reservoir', dist:'~30 mi south',
-    typeLabel:'1,414-acre impoundment · Juniper + Blacktail ramps',
-    pole:'spin', difficulty:'intermediate',
-    alerts:[],
+    typeLabel:'1,414-acre impoundment · Juniper + Blacktail ramps', pole:'spin', difficulty:'intermediate', alerts:[],
     fish:[
-      {
-        id:'kokanee', name:'Kokanee Salmon', sub:'Best trolled at depth',
-        ico:'ti-fish', color:'coral', pole:'spin',
-        where:'Suspended in the water column at specific depth layers. School behavior — when you find one, you find many.',
+      { id:'kokanee-ririe', name:'Kokanee Salmon', sub:'Best trolled at depth · school fish', ico:'ti-fish', color:'coral', pole:'spin',
+        where:'Suspended in water column at specific depth layers. School behavior — find one, find many.',
         rig:'Clip-weight trolling rig with dodger + hoochie',
-        bait:'Synthetic hoochie (pink, red, or chrome) with shoepeg corn soaked in tuna or krill oil',
-        gear:'Medium rod in rod holder. Trolling speed 1.5–2 mph. 20 ft line → clip weight → 60–100 ft more → dodger → hoochie.',
-        technique:'20 ft depth: 2 oz clip weight + 60 ft line. 30 ft: 3 oz + 80 ft. 40 ft: 4 oz + 100 ft. Start shallow and work deeper until you find the school.',
-        bestTime:'Dawn trolling (5–8 AM). Kokanee go deep midday.',
-        tip:"Kokanee have soft mouths — don't set the hook hard. Keep steady pressure and let the fish tire itself out.",
-        access:'Juniper Ramp and Blacktail Ramp off US-26. Boat recommended. Good ice fishing in winter.'
-      },
-      {
-        id:'perch', name:'Yellow Perch', sub:'Schools near bottom',
-        ico:'ti-fish', color:'amber', pole:'spin',
+        bait:'Synthetic hoochie (pink, red, or chrome) with shoepeg corn in tuna or krill oil',
+        gear:'Medium rod in rod holder. Trolling speed 1.5–2 mph.',
+        technique:'20 ft depth: 2 oz clip weight + 60 ft line. 30 ft: 3 oz + 80 ft. 40 ft: 4 oz + 100 ft. Start shallow, work deeper until you find the school.',
+        bestTime:'Dawn trolling 5–8 AM. Kokanee go deep midday.',
+        tip:"Soft mouths — don't set hook hard. Steady pressure and let the fish tire.",
+        access:'Juniper Ramp and Blacktail Ramp off US-26. Boat recommended.' },
+      { id:'perch-ririe', name:'Yellow Perch', sub:'Dense schools · vertical jig near bottom', ico:'ti-fish', color:'amber', pole:'spin',
         where:'Juniper ramp area: 30–50 ft deep near bottom. Blacktail: shallower, under 30 ft.',
         rig:'Fast-sinking jig or benthic bait rig',
-        bait:"Perch eye or belly meat on small jig · Nightcrawler on bottom hook · Mealworms",
-        gear:'Light spinning rod, 4–6 lb mono. Small jig head (1/16–1/8 oz).',
-        technique:"Drop jig straight to the bottom. Lift 6–12 inches, drop back. After catching one perch, harvest its eyes for bait — perch are cannibalistic and will hit their own.",
+        bait:'Perch eye or belly meat on small jig · Nightcrawler on bottom hook · Mealworms',
+        gear:'Light spinning rod, 4–6 lb mono. Jig head 1/16–1/8 oz.',
+        technique:'Drop jig to bottom. Lift 6–12 inches, drop back. After catching first perch, harvest its eyes for bait — perch are cannibalistic.',
         bestTime:'Mid-morning through afternoon at depth.',
-        tip:'Keep your jig small and move it subtly. Perch in cold, clear water are line-shy — go light on the leader.',
-        access:'Boat from Juniper or Blacktail ramps. Shore fishing possible near ramp areas.'
-      },
-      {
-        id:'tiger-trout', name:'Tiger Trout', sub:'Brown ♀ × Brook ♂ hybrid · 2,200+ stocked May',
-        ico:'ti-fish', color:'green', pole:'spin',
-        where:'Rocky talus slopes, submerged brush lines, and canyon walls.',
+        tip:'Keep jig small. Go light on leader — perch in cold clear water are line-shy.',
+        access:'Boat from Juniper or Blacktail ramps. Shore fishing possible near ramp areas.' },
+      { id:'tiger-ririe', name:'Tiger Trout', sub:'2,200+ stocked late May · aggressive predators', ico:'ti-fish', color:'green', pole:'spin',
+        where:'Rocky talus slopes, submerged brush lines, canyon walls.',
         rig:'Medium spinning rod with minnow plug or streamer',
         bait:'Small minnow plug (shad or perch color) · White/chartreuse inline spinner · Live crayfish (caught on-site)',
         gear:'Medium spin rod, 8–10 lb mono or fluoro.',
-        technique:"Cast to rocky structure and retrieve at medium speed. Vary retrieve cadence — tiger trout often strike on a pause. They're stocked to control chubs and suckers, so match that forage.",
+        technique:'Cast to rocky structure and retrieve at medium speed. Vary cadence — tiger trout often strike on a pause.',
         bestTime:'Dawn and late afternoon near structure.',
         tip:'Over 2,200 tiger trout stocked late May — fresh, hungry, and aggressive right now.',
-        access:'Boat access recommended. Can shore fish rocky banks.'
-      }
+        access:'Boat access recommended.' },
+      { id:'rainbow-ririe', name:'Rainbow Trout', sub:'Stocked · open water', ico:'ti-fish', color:'blue', pole:'spin',
+        where:'Open water throughout. Rainbows suspend at thermocline — usually 10–20 ft in spring.',
+        rig:'Trolling rig or bobber and bait from shore',
+        bait:'PowerBait · Gold spinner · Small spoon · Nightcrawler',
+        gear:'Light to medium spin rod, 6–8 lb mono.',
+        technique:'Troll a spinner at 1.5 mph through open water. Shore fishing: cast PowerBait to open water on a slip bobber set 3–5 ft deep.',
+        bestTime:'Morning and late afternoon.',
+        tip:'Rainbows stocked in addition to tiger trout and kokanee. Good shore fishing from the ramp areas.',
+        access:'Juniper and Blacktail ramps. Shore fishing available.' },
+      { id:'smallmouth-ririe', name:'Smallmouth Bass', sub:'Rocky canyon walls and talus', ico:'ti-fish', color:'purple', pole:'spin',
+        where:'Rocky talus slopes and canyon walls. Smallmouth documented in Ririe Reservoir.',
+        rig:'Tube jig or crayfish-color crankbait',
+        bait:"3\" tube jig · Crayfish crankbait · Small swimbait",
+        gear:'Medium spin rod, 8–10 lb mono.',
+        technique:'Cast to rocky walls and retrieve at varying speeds. Smallmouth will chase lures along cliff faces.',
+        bestTime:'Morning near rocky structure.',
+        tip:'Smallmouth bass documented in Ririe surveys. Bonus catch while targeting tiger trout or kokanee.',
+        access:'Boat access. Rocky canyon walls accessible from water.' }
     ]
   },
   {
     id:'ashton', name:'Ashton Reservoir', type:'reservoir', dist:'~30 mi north',
-    typeLabel:'Large irrigation reservoir · stocked heavily',
-    pole:'spin', difficulty:'beginner',
-    alerts:[],
+    typeLabel:'Large irrigation reservoir · 38,000+ trout/year', pole:'spin', difficulty:'beginner', alerts:[],
     fish:[
-      {
-        id:'rainbow-ashton', name:'Rainbow Trout', sub:'Heavily stocked — 38,000+ fish/year',
-        ico:'ti-fish', color:'blue', pole:'spin',
-        where:'Open water throughout. Stocked fish distribute widely — fan cast from the bank or troll.',
+      { id:'rainbow-ashton', name:'Rainbow Trout', sub:'Heavily stocked · 38,000+ fish annually', ico:'ti-fish', color:'blue', pole:'spin',
+        where:'Open water throughout. Stocked fish distribute widely — fan cast or troll.',
         rig:'Slip bobber or slow troll',
         bait:'PowerBait · Nightcrawler · Gold inline spinner · Small spoon',
         gear:'Ultralight to medium spin rod, 4–8 lb mono.',
-        technique:'Bank: cast PowerBait to open water, let it sit on a slip bobber or bottom rig. Troll: run a small spinner or spoon at 1.5 mph along the bank structure.',
+        technique:'Bank: cast PowerBait to open water on slip bobber or bottom rig. Troll: run small spinner at 1.5 mph along bank structure.',
         bestTime:'Morning and late afternoon.',
-        tip:'One of the most heavily stocked waters in eastern Idaho — over 38,000 triploid rainbows stocked in 2025. Great numbers guarantee consistent action.',
-        access:'Free public access. Boat ramp available. Shore fishing along dam face and banks.'
-      }
+        tip:'One of the most heavily stocked waters in eastern Idaho. Over 38,000 triploid rainbows stocked in 2025.',
+        access:'Free public access. Boat ramp available. Shore fishing along dam face and banks.' },
+      { id:'perch-ashton', name:'Yellow Perch', sub:'Near bottom in deeper water', ico:'ti-fish', color:'amber', pole:'spin',
+        where:'Deeper basin areas near bottom. Perch migrate toward inflows in spring.',
+        rig:'Vertical jig or bottom worm rig',
+        bait:'Nightcrawler · Mealworm · Small jig tipped with worm',
+        gear:'Light spin rod, 4 lb mono. Small hooks.',
+        technique:'Find deeper water and fish vertically. Lift-drop-pause. Perch bite is subtle — watch your line for any twitch.',
+        bestTime:'Mid-morning.',
+        tip:'Perch present in Ashton Reservoir and worth targeting if trout action is slow.',
+        access:'Free public access. Shore or boat.' },
+      { id:'catfish-ashton', name:'Channel Catfish', sub:'Warm bottom areas · evenings', ico:'ti-fish', color:'gray', pole:'spin',
+        where:'Warm, shallow areas near the dam face and any inflow structures.',
+        rig:'Heavy bottom rig',
+        bait:'Chicken liver · Stink bait · Cut fish · Nightcrawler',
+        gear:'Medium spin rod, 10–15 lb line. Size 2/0–3/0 hook.',
+        technique:'Cast to warm shallow flats, especially near any inflow. Set bait on bottom and wait.',
+        bestTime:'Evening and into dark.',
+        tip:'Channel catfish documented in the reservoir. Good evening target when trout fishing slows.',
+        access:'Free public access. Shore or boat.' }
     ]
   },
-
-  // ── SAND CREEK ──
   {
     id:'sandcreek', name:'Sand Creek WMA — Pond 4', type:'lake', dist:'~20 mi north · St. Anthony',
-    typeLabel:'100-acre volcanic stillwater · bear habitat',
-    pole:'both', difficulty:'beginner',
-    alerts:['CLOSED until July 1','Bear habitat'],
+    typeLabel:'100-acre volcanic stillwater · bear habitat', pole:'both', difficulty:'beginner', alerts:['CLOSED until July 1','Bear habitat'],
     fish:[
-      {
-        id:'rainbow-stocked', name:'Stocked Rainbow Trout', sub:"Triploid — grows fast, can't spawn",
-        ico:'ti-fish', color:'blue', pole:'spin',
+      { id:'rainbow-sc', name:'Stocked Rainbow Trout', sub:"Triploid — grows fast, can't spawn", ico:'ti-fish', color:'blue', pole:'spin',
         where:'Open water mid-depth and near inflow structures. Fan cast to cover water.',
         rig:'Ultralight spin or fly patterns from float tube',
         bait:'Gold inline spinner (Mepps/Panther Martin) · Nightcrawler · PowerBait',
         gear:'Ultralight rod, 4–6 lb mono.',
-        technique:'Retrieve spinner at consistent medium speed just below surface. Float tube lets you access the whole pond.',
+        technique:'Retrieve spinner at consistent medium speed just below surface. Float tube lets you access the full pond.',
         bestTime:'Late afternoon 3–6 PM.',
         tip:"Triploid rainbows grow faster because they don't spawn. Expect larger-than-average stocked fish.",
-        access:'Pond 4 has concrete boat ramp, boarding dock, vaulted restrooms. 25 primitive campsites $10/night. Bears active — secure food.'
-      },
-      {
-        id:'brook', name:'Wild Brook Trout', sub:'Shallower areas and inlets',
-        ico:'ti-fish', color:'teal', pole:'fly',
-        where:'Shallower coves, near any spring inflows, and along weed edges.',
+        access:'Pond 4: concrete boat ramp, boarding dock, vaulted restrooms. 25 primitive campsites $10/night. Bear country — secure all food.' },
+      { id:'brook-sc', name:'Wild Brook Trout', sub:'Shallower areas and inlets', ico:'ti-fish', color:'teal', pole:'fly',
+        where:'Shallower coves, near spring inflows, and along weed edges.',
         rig:'Wet fly under indicator or small inline spinner',
-        bait:'Soft hackle wet fly · small Wooly Bugger · worm on drop-shot',
+        bait:'Soft hackle wet fly · Small Wooly Bugger · Worm on drop-shot',
         gear:'Ultralight rod or 3-weight fly rod. 4X tippet for flies.',
-        technique:'Dead drift wet flies near the bottom in shallower areas. Brook trout hit aggressively — no need for subtle presentation.',
+        technique:'Dead drift wet flies near the bottom in shallower areas. Brook trout hit aggressively — no subtle presentation needed.',
         bestTime:'Morning and late afternoon.',
-        tip:'Brook trout have a 25/day bag limit — great eating fish.',
-        access:'As above. Note seasonal closure Jan 1–Jul 1 for waterfowl nesting.'
-      }
+        tip:'Brook trout have 25/day bag limit. Great eating fish.',
+        access:'Same as above. Seasonal closure Jan 1–Jul 1.' }
     ]
   },
-
-  // ── WARM RIVER ──
-  {
-    id:'warmriver', name:'Warm River', type:'river', dist:'~35 mi north · Ashton',
-    typeLabel:'Geothermal spring-fed tributary · near Ashton',
-    pole:'fly', difficulty:'intermediate',
-    alerts:[],
-    fish:[
-      {
-        id:'rainbow-warm', name:'Rainbow Trout', sub:'Hatchery near campground, wild upstream',
-        ico:'ti-fish', color:'blue', pole:'fly',
-        where:'Lower canyon near Warm River Campground: stocked fish. Upper canyon: wild, selective trout.',
-        rig:'3-weight fly rod — nymph under indicator or dry fly',
-        bait:'Zebra Midge #18–22 (black/silver rib) · RS2 · Small Parachute Adams',
-        gear:'3-weight fly rod, 5X–6X tippet. Delicate presentation needed for wild fish.',
-        technique:'Nymph deep under a small indicator. Geothermal springs keep water cold and fish hug the bottom. Dead-drift through the main current seam.',
-        bestTime:"Midday — stable thermal temps make this productive all day when other rivers are blown out.",
-        tip:"Idaho's best cold-weather fishery. When spring runoff blows out the Teton, Warm River is clear and fishable. Year-round access.",
-        access:'Free. Warm River Campground off US-20. Wade upstream into canyon. Year-round open.'
-      }
-    ]
-  },
-
-  // ── HENRY'S LAKE ──
   {
     id:'henryslake', name:"Henry's Lake", type:'lake', dist:'~55 mi northeast · Yellowstone border',
-    typeLabel:'Legendary high-altitude stillwater · artificial lures/flies only',
-    pole:'both', difficulty:'intermediate',
-    alerts:['Flies & lures only — no bait','3-trout limit'],
+    typeLabel:'Legendary high-altitude stillwater · flies and lures only', pole:'both', difficulty:'intermediate', alerts:["Flies & lures only — NO bait",'3-trout limit'],
     fish:[
-      {
-        id:'cutthroat-hl', name:'Yellowstone Cutthroat', sub:'Fat, aggressive cutthroat — 14–22"',
-        ico:'ti-fish', color:'coral', pole:'fly',
-        where:"Weed edges, submerged spring seeps, and near inlet streams. Henry's Lake cutthroat are aggressive and feed near the surface in early morning.",
-        rig:'Intermediate or floating fly line with leech or nymph',
-        bait:"Woolly Bugger (black, olive, brown) #6–10 · Marabou Leech · Chironomid #14–18 under indicator",
-        gear:'5–6 weight fly rod with slow-sink or intermediate line. Float tube or pontoon boat strongly recommended.',
-        technique:"Cast toward weed beds and strip a slow, steady retrieve. Chironomids: dead drift deep under an indicator near submerged springs. Henry's Lake cutthroat often take on the hang — wait before stripping.",
-        bestTime:'Early morning (5–8 AM) and late evening.',
-        tip:'One of the most productive fisheries in the western US. The fat cutthroat here are legendary. Worth the drive.',
-        access:'State-run Henry\'s Lake SP — camping and boat ramps. Day use fee. Short season: late May through Nov 30. No live bait anywhere on the lake.'
-      },
-      {
-        id:'hybrid-hl', name:'Cutthroat-Rainbow Hybrid', sub:'Explosive on streamers',
-        ico:'ti-fish', color:'purple', pole:'both',
-        where:'Open water and near any inlet stream. Hybrids roam more than pure cutthroat.',
+      { id:'cutthroat-hl', name:'Yellowstone Cutthroat', sub:'Fat aggressive cutthroat · 14–22"', ico:'ti-fish', color:'coral', pole:'fly',
+        where:'Weed edges, submerged spring seeps, near inlet streams. Feed near surface in early morning.',
+        rig:'Intermediate or floating line with leech or nymph',
+        bait:"Woolly Bugger (black, olive, brown) #6–10 · Marabou Leech · Chironomid #14–18",
+        gear:'5–6 weight fly rod with slow-sink or intermediate line. Float tube or pontoon strongly recommended.',
+        technique:"Cast toward weed beds, strip slow steady retrieve. Chironomids: dead drift deep under indicator near submerged springs. Cutthroat often take on the hang — wait before stripping.",
+        bestTime:'Early morning 5–8 AM and late evening.',
+        tip:"One of the most productive fisheries in the western US. The fat cutthroat here are legendary. Worth the drive.",
+        access:"Henry's Lake SP — camping, boat ramps. Day use fee. Season late May–Nov 30. No live bait." },
+      { id:'hybrid-hl', name:'Cutthroat-Rainbow Hybrid', sub:'Explosive on streamers and spinners', ico:'ti-fish', color:'purple', pole:'both',
+        where:'Open water and near inlet streams. Hybrids roam more than pure cutthroat.',
         rig:'Medium spin rod with inline spinner, or streamer on fly rod',
         bait:'Kastmaster spoon · Inline spinner (silver or gold) · Bright streamer',
         gear:'Medium spin rod 8–10 lb mono, or 6-weight fly rod.',
-        technique:'Troll a Kastmaster slowly along weed lines. Cast spinners toward any visible surface activity. Strip streamers fast — hybrids react to aggressive retrieves.',
+        technique:'Troll a Kastmaster slowly along weed lines. Cast spinners toward surface activity. Strip streamers fast — hybrids react to aggressive retrieves.',
         bestTime:'Mid-morning through afternoon.',
-        tip:'No bait allowed on the entire lake — lures and flies only. Barbless hooks reduce damage to these prized fish.',
-        access:"Henry's Lake SP. Boat ramp, camping, restrooms. ~55 mi from Rexburg via US-20."
-      },
-      {
-        id:'brook-hl', name:'Brook Trout', sub:'Near inlet streams',
-        ico:'ti-fish', color:'teal', pole:'both',
-        where:'Near Targhee Creek, Howard Creek, and other inlets. Brook trout concentrate near moving water.',
+        tip:'No bait allowed on the entire lake — lures and flies only. Barbless hooks reduce damage.',
+        access:"Henry's Lake SP. Boat ramp, camping, restrooms." },
+      { id:'brook-hl', name:'Brook Trout', sub:'Near inlet streams · Targhee Creek area', ico:'ti-fish', color:'teal', pole:'both',
+        where:'Near Targhee Creek, Howard Creek, and other inlets. Concentrate near moving water.',
         rig:'Small spinner or dry fly',
         bait:'Panther Martin #4 · Small Elk Hair Caddis · Royal Wulff #12–14',
         gear:'Ultralight spin rod or 3–4 weight fly rod.',
-        technique:'Cast upstream near inlet mouths. Brook trout are opportunistic — they hit small flies and spinners readily.',
+        technique:'Cast upstream near inlet mouths. Brook trout hit small flies and spinners readily.',
         bestTime:'Morning near inlets.',
-        tip:"Brook trout here run smaller than cutthroat but are beautiful fish. Good eating — 25/day limit.",
-        access:"Henry's Lake SP."
-      }
+        tip:"Brook trout here run smaller than cutthroat. Beautiful fish — 25/day limit.",
+        access:"Henry's Lake SP." }
     ]
   },
-
-  // ── ISLAND PARK ──
   {
     id:'islandpark', name:"Henry's Fork — Island Park (Box Canyon)", type:'river', dist:'~45 mi north',
-    typeLabel:'Trophy tailwater · dam to Big Springs',
-    pole:'fly', difficulty:'advanced',
-    alerts:['Catch-and-release only above Last Chance'],
+    typeLabel:'Trophy tailwater · dam to Big Springs', pole:'fly', difficulty:'advanced', alerts:['C&R only above Last Chance'],
     fish:[
-      {
-        id:'rainbow-box', name:'Wild Rainbow Trout', sub:'18–26" fish possible',
-        ico:'ti-fish', color:'blue', pole:'fly',
+      { id:'rainbow-bp', name:'Wild Rainbow Trout', sub:'18–26" fish possible · world-class', ico:'ti-fish', color:'blue', pole:'fly',
         where:'Box Canyon: fast pocket water and deep runs. Last Chance meadow: slow, flat, ultra-technical.',
         rig:'4–6 weight fly rod',
-        bait:'PMD Sparkle Dun #14–16 · Pale Morning Dun nymph · CDC Caddis #14 · Rusty Spinner',
+        bait:'PMD Sparkle Dun #14–16 · CDC Caddis #14 · Rusty Spinner #14 · Two-fly nymph rig',
         gear:"9-ft 5–6 weight, 5X–6X tippet. Henry's Fork fish are the most selective in Idaho.",
-        technique:"Box Canyon: high-stick nymph or heavy streamer through pocket water. Last Chance meadow: ultra-long casts, pile cast, and perfect drag-free drifts. These fish see thousands of flies — presentation is everything.",
+        technique:'Box Canyon: high-stick nymph or heavy streamer through pocket water. Last Chance meadow: ultra-long casts, pile cast, perfect drag-free drifts.',
         bestTime:'PMD hatch 10 AM–2 PM. Spinner fall at dusk.',
-        tip:"Last Chance stretch is known for being nearly impossible during PMD time — but also the most rewarding. Box Canyon is more accessible for intermediate fly anglers.",
-        access:'Last Chance access from Hwy 20. Box Canyon trailhead off Forest Rd. C&R only above Last Chance. Some sections require Idaho fishing license + Harriman State Park day use.'
-      }
+        tip:"Last Chance is known as nearly impossible during PMD time — but the most rewarding. Box Canyon is more accessible for intermediate fly anglers.",
+        access:'Last Chance access from Hwy 20. C&R only above Last Chance. Some sections require Harriman State Park day use.' },
+      { id:'brown-bp', name:'Brown Trout', sub:'Large fish in deeper runs', ico:'ti-fish', color:'amber', pole:'fly',
+        where:'Deeper runs and undercut banks in the Box Canyon section.',
+        rig:'Heavy streamer on 6–7 weight',
+        bait:"Articulated streamer (black/brown) · Sculpin pattern · Large Woolly Bugger #2–4",
+        gear:'6–7 weight fly rod, 2X–3X leader.',
+        technique:'Swing streamers through deeper pools at dawn and dusk. Strip hard on the retrieve. Brown trout ambush from structure.',
+        bestTime:'Dawn and dusk.',
+        tip:'Big brown trout present in Island Park section. Dusk streamer fishing can produce the fish of a lifetime.',
+        access:'Same as above.' },
+      { id:'whitefish-bp', name:'Mountain Whitefish', sub:'Very abundant · good indicator fish', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Throughout the river in all faster sections.',
+        rig:'Nymph rig',
+        bait:'Hare\'s Ear #14 · Pheasant Tail #16 · Prince Nymph #14',
+        gear:'5-weight, 4X tippet.',
+        technique:'High-stick nymph through riffles. Whitefish feed aggressively all day — where they feed, trout are near.',
+        bestTime:'All day.',
+        tip:"Very abundant in Island Park section. Good to catch while waiting for the PMD hatch. 25/day.",
+        access:'Same as above.' }
     ]
   },
-
-  // ── MADISON RIVER ──
-  {
-    id:'madison', name:'Madison River — Hebgen Lake to MT border', type:'river', dist:'~60 mi northeast',
-    typeLabel:'Blue-ribbon tailwater · partial Wyoming waters',
-    pole:'fly', difficulty:'advanced',
-    alerts:['Check Wyoming/Montana license requirements'],
-    fish:[
-      {
-        id:'brown-madison', name:'Brown Trout', sub:'Fall spawners run to 25"',
-        ico:'ti-fish', color:'amber', pole:'fly',
-        where:'Big pools, runs behind large boulders, and deep channel bends.',
-        rig:'6–7 weight fly rod',
-        bait:'Large Woolly Bugger · Double Bead Stonefly Nymph · Hopper-dropper in summer',
-        gear:'6–7 weight fly rod, 3X–4X tippet for big fish. Chest waders required.',
-        technique:"Swing streamers through the big pools on a wet-fly swing. High-stick heavy nymphs through fast runs. Summer: hopper-dropper along the banks produces explosive strikes.",
-        bestTime:'Dawn and dusk. Golden hour.',
-        tip:"The Madison is one of the most famous trout rivers in the world — rightfully so. Big fish, beautiful canyon. Make the drive.",
-        access:'Multiple access points off US-287 and Hwy 20. Check if you cross into Montana — MT license required.'
-      }
-    ]
-  },
-
-  // ── FALL RIVER ──
   {
     id:'fallriver', name:'Fall River — Cave Falls Area', type:'river', dist:'~50 mi northeast',
-    typeLabel:'Freestone river · Yellowstone border',
-    pole:'fly', difficulty:'intermediate',
-    alerts:[],
+    typeLabel:'Freestone river · Yellowstone border · free access', pole:'fly', difficulty:'intermediate', alerts:[],
     fish:[
-      {
-        id:'cutthroat-fall', name:'Yellowstone Cutthroat', sub:'Wild native fish',
-        ico:'ti-fish', color:'coral', pole:'fly',
+      { id:'cutthroat-fr', name:'Yellowstone Cutthroat', sub:'Wild native fish · less pressured', ico:'ti-fish', color:'coral', pole:'fly',
         where:'Rocky runs and plunge pools below Cave Falls. Moderate gradient.',
         rig:'4–5 weight fly rod',
-        bait:'Elk Hair Caddis #12–14 · Stimulator #10–12 · Hare\'s Ear nymph',
+        bait:"Elk Hair Caddis #12–14 · Stimulator #10–12 · Hare's Ear nymph",
         gear:'9-ft 4–5 weight, 4X–5X tippet.',
         technique:"Match the caddis hatch or fish a large attractor dry. These cutthroat are less pressured than Teton fish — they'll rise to most well-presented dries.",
         bestTime:'Mid-morning and afternoon.',
-        tip:'Cave Falls is a spectacular 20-ft waterfall with easy access. Fish it before or after visiting the falls. Primitive camping nearby.',
-        access:'Cave Falls Campground via Reclamation Rd from Ashton. Free. Gravel road — high clearance recommended.'
-      }
+        tip:'Cave Falls is spectacular (20-ft waterfall) with easy access. Fish before or after visiting falls. Primitive camping nearby.',
+        access:'Cave Falls Campground via Reclamation Rd from Ashton. Free. Gravel road — high clearance recommended.' },
+      { id:'brook-fr', name:'Brook Trout', sub:'Upper tributaries', ico:'ti-fish', color:'teal', pole:'fly',
+        where:'Upper tributaries and coldest headwater sections of Fall River drainage.',
+        rig:'Small dry fly, 3–4 weight rod',
+        bait:'Royal Wulff #12–14 · Elk Hair Caddis #14 · Stimulator #10',
+        gear:'3–4 weight rod, 4X–5X tippet.',
+        technique:'Brook trout are aggressive — any well-presented attractor dry works. Fish near shade and coldest water.',
+        bestTime:'Morning.',
+        tip:'Brook trout documented in Fall River headwaters. 25/day limit.',
+        access:'Hike in from Cave Falls Campground.' },
+      { id:'whitefish-fr', name:'Mountain Whitefish', sub:'Riffles and faster runs', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Faster riffles and gravel runs throughout the river.',
+        rig:'Nymph under indicator',
+        bait:'Hare\'s Ear #14 · Pheasant Tail #16',
+        gear:'4–5 weight, 4X tippet.',
+        technique:'Nymph through riffles between pools. Whitefish present throughout Fall River.',
+        bestTime:'All day.',
+        tip:"Often catch whitefish while targeting cutthroat here — that's fine, 25/day.",
+        access:'Cave Falls Campground.' }
     ]
   },
-
-  // ── LAKE WALCOTT / MILNER ──
+  {
+    id:'madison', name:'Madison River — Hebgen area', type:'river', dist:'~60 mi northeast',
+    typeLabel:'Blue-ribbon tailwater · check MT license requirements', pole:'fly', difficulty:'advanced', alerts:['Check Wyoming/Montana license'],
+    fish:[
+      { id:'brown-madison', name:'Brown Trout', sub:'Fall spawners run to 25" · world-class', ico:'ti-fish', color:'amber', pole:'fly',
+        where:'Big pools, runs behind large boulders, deep channel bends.',
+        rig:'6–7 weight fly rod',
+        bait:'Large Woolly Bugger · Double Bead Stonefly Nymph · Hopper-dropper in summer',
+        gear:'6–7 weight fly rod, 3X–4X tippet. Chest waders required.',
+        technique:"Swing streamers through big pools on wet-fly swing. High-stick heavy nymphs through fast runs. Summer: hopper-dropper along banks produces explosive strikes.",
+        bestTime:'Dawn, dusk, and golden hour.',
+        tip:"One of the most famous trout rivers in the world. Big fish, beautiful canyon. Make the drive.",
+        access:'Multiple access points off US-287 and Hwy 20. MT license may be required.' },
+      { id:'rainbow-madison', name:'Rainbow Trout', sub:'Mix in with browns throughout', ico:'ti-fish', color:'blue', pole:'fly',
+        where:'Faster riffles and tailouts. Rainbows more aggressive and active in faster water.',
+        rig:'5–6 weight fly rod, dry fly or nymph',
+        bait:'Elk Hair Caddis #12–14 · Stimulator #8–10 · Wooly Bugger #6',
+        gear:'5–6 weight, 4X tippet.',
+        technique:'Madison is known for the "Aggravator" style — swinging soft hackles and wet flies. Also excellent on dries during stonefly hatches.',
+        bestTime:'Mid-morning and afternoon.',
+        tip:"Rainbow trout common throughout the Madison. Sometimes outnumber browns in faster sections.",
+        access:'US-287 and Hwy 20 access points.' },
+      { id:'whitefish-madison', name:'Mountain Whitefish', sub:'Abundant in all gravel runs', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Gravel runs and riffles throughout.',
+        rig:'Nymph or soft hackle wet fly',
+        bait:'Hare\'s Ear #12–14 · Soft hackle #12–14',
+        gear:'5–6 weight, 4X tippet.',
+        technique:'Swing soft hackle wet flies on a tight line through gravel runs. Classic Madison River technique.',
+        bestTime:'All day.',
+        tip:"Whitefish are abundant in the Madison. Caught regularly while targeting trout.",
+        access:'Same access points.' }
+    ]
+  },
   {
     id:'milner', name:'Milner Reservoir', type:'reservoir', dist:'~70 mi southwest',
-    typeLabel:'Snake River reservoir · walleye & bass',
-    pole:'spin', difficulty:'intermediate',
-    alerts:[],
+    typeLabel:'Snake River reservoir · walleye, bass, catfish', pole:'spin', difficulty:'intermediate', alerts:[],
     fish:[
-      {
-        id:'walleye', name:'Walleye', sub:'No bag limit — harvest encouraged',
-        ico:'ti-fish', color:'amber', pole:'spin',
-        where:'Rocky points, gravel bars, and dam face. Walleye school in predictable structure.',
+      { id:'walleye-milner', name:'Walleye', sub:'No bag limit — harvest encouraged', ico:'ti-fish', color:'amber', pole:'spin',
+        where:'Rocky points, gravel bars, dam face. Walleye school in predictable structure.',
         rig:'Jig and twister tail or live-bait rig',
-        bait:'3" twister tail (white, chartreuse) on 1/4 oz jig · Nightcrawler on spinner rig · Rapala',
+        bait:"3\" twister tail (white, chartreuse) on 1/4 oz jig · Nightcrawler on spinner rig · Rapala",
         gear:'Medium spin rod, 8–10 lb mono or braid.',
-        technique:'Jig along bottom near rocky structure. Slow drag back with occasional hops. Night fishing with a crankbait near any lit structure is productive.',
+        technique:'Jig along bottom near rocky structure. Slow drag with occasional hops. Night fishing near lit structure is productive.',
         bestTime:'Dawn, dusk, and night.',
-        tip:"No bag, length, or possession limit on walleye statewide — IDFG encourages heavy harvest to protect trout fisheries. Take as many as you want.",
-        access:'Lake Walcott SP has boat ramp, camping, picnic areas. ~70 mi. Worth combining with a Twin Falls day trip.'
-      }
+        tip:"No bag, length, or possession limit on walleye statewide. IDFG encourages heavy harvest to protect trout.",
+        access:'Lake Walcott SP: boat ramp, camping, picnic areas. ~70 mi.' },
+      { id:'bass-milner', name:'Largemouth Bass', sub:'Warm shallow coves', ico:'ti-fish', color:'teal', pole:'spin',
+        where:'Warm shallow coves with vegetation. Bass become more active as reservoir warms in summer.',
+        rig:'Texas rig or topwater',
+        bait:"4\" plastic worm (green pumpkin) · Topwater popper · Spinnerbait",
+        gear:'Medium spin rod, 10–12 lb mono.',
+        technique:'Texas rig: cast to submerged vegetation and retrieve slowly along bottom. Topwater: early morning and evening along weed edges.',
+        bestTime:'Early morning and evening.',
+        tip:'Bass fishing at Milner picks up significantly through June–July as water warms.',
+        access:'Lake Walcott SP.' },
+      { id:'catfish-milner', name:'Channel Catfish', sub:'Deep holes and warm flats', ico:'ti-fish', color:'gray', pole:'spin',
+        where:'Deep holes and warm shallows near any inflow.',
+        rig:'Heavy bottom rig',
+        bait:'Chicken liver · Stink bait · Cut fish · Nightcrawler',
+        gear:'Medium-heavy spin rod, 12–17 lb line. Size 2/0–4/0 hook.',
+        technique:'Cast to warm areas, let it sit on bottom. Catfish find food by smell — wait them out.',
+        bestTime:'Evening into dark.',
+        tip:'Channel catfish common in the Snake River reservoir system. Good eating and easy to target.',
+        access:'Lake Walcott SP.' },
+      { id:'rainbow-milner', name:'Rainbow Trout', sub:'Stocked · cooler months', ico:'ti-fish', color:'blue', pole:'spin',
+        where:'Open water, especially near dam and inflow areas in cooler months.',
+        rig:'Slip bobber or inline spinner',
+        bait:'PowerBait · Gold spinner · Nightcrawler',
+        gear:'Light spin rod, 6 lb mono.',
+        technique:'Cast PowerBait to open water. Spinner: slow retrieve near surface in early morning.',
+        bestTime:'Morning in spring and fall when water is cooler.',
+        tip:'Trout stocked in cooler months. Best action April–June before water warms.',
+        access:'Lake Walcott SP.' }
+    ]
+  },
+  {
+    id:'warmslough', name:"Henry's Fork — Warm Slough", type:'river', dist:'~11 mi west',
+    typeLabel:'Slow side channel · float tube or bank access', pole:'fly', difficulty:'intermediate', alerts:[],
+    fish:[
+      { id:'rainbow-ws', name:'Rainbow Trout', sub:'Slow-water technical fishing', ico:'ti-fish', color:'blue', pole:'fly',
+        where:'Cold undercurrents in slow side channel provide summer refuge. Fish hold deep midday.',
+        rig:'4–5 weight fly rod, float tube',
+        bait:'Midge #18–22 · Small BWO #18–20 · Soft hackle wet flies',
+        gear:'4–5 weight fly rod. Float tube lets you cover the slough quietly.',
+        technique:'Slow deliberate approach. Dead-drift midges through slow current seams. In midday heat, deep nymph rig — fish suspend in cool undercurrents.',
+        bestTime:'Morning and evening.',
+        tip:'Heavy mosquito and fly activity in summer — bring bug spray. Float tube strongly recommended.',
+        access:'Free. Pull off Hwy 33 at ~11 miles west of Rexburg. Rough bank access.' },
+      { id:'brown-ws', name:'Brown Trout', sub:'Undercut banks and slow eddies', ico:'ti-fish', color:'amber', pole:'fly',
+        where:'Undercut banks and slow deep eddies in the slough. Browns favor slow, dark water.',
+        rig:'Streamer on 5–6 weight',
+        bait:"Wooly Bugger #6–8 (black/olive) · Small articulated streamer",
+        gear:'5–6 weight fly rod, 3X leader.',
+        technique:'Strip streamers slowly through undercut banks at dusk. Brown trout emerge from cover at low light.',
+        bestTime:'Dusk.',
+        tip:'Less pressure here than main Henry\'s Fork. Warm Slough holds some large browns that are rarely fished.',
+        access:'Free. Rough bank access or float tube.' },
+      { id:'whitefish-ws', name:'Mountain Whitefish', sub:'Any faster water pockets', ico:'ti-fish', color:'gray', pole:'fly',
+        where:'Any faster-flowing sections within the slough system.',
+        rig:'Nymph under indicator',
+        bait:'Hare\'s Ear #14 · Pheasant Tail #16',
+        gear:'4–5 weight, 4X tippet.',
+        technique:'Nymph through any riffled or faster sections. Whitefish very common in Henry\'s Fork drainage.',
+        bestTime:'All day.',
+        tip:'Often the most catchable fish at Warm Slough when trout are off.',
+        access:'Free. Bank or float tube.' }
     ]
   }
 ];
@@ -834,38 +925,28 @@ const FISH_COLORS = {
 };
 
 const POLE_LABELS = {fly:'Fly only', spin:'Spin/bait', both:'Fly or spin'};
-const DIFF_LABELS = {beginner:'Beginner',intermediate:'Intermediate',advanced:'Advanced'};
+const DIFF_LABELS = {beginner:'Beginner', intermediate:'Intermediate', advanced:'Advanced'};
 
 let activeFilters = {pole:'all', water:'all'};
 let selectedSpot = null;
-let selectedFish = null;
 
 function setFilter(type, val) {
   activeFilters[type] = val;
-  // update button states
   if (type === 'pole') {
-    document.querySelectorAll('#filt-all,#filt-fly,#filt-spin').forEach(b => b.classList.remove('active'));
-    const map = {all:'filt-all', fly:'filt-fly', spin:'filt-spin'};
-    document.getElementById(map[val]).classList.add('active');
+    ['filt-all','filt-fly','filt-spin'].forEach(id => document.getElementById(id).classList.remove('active'));
+    document.getElementById({all:'filt-all',fly:'filt-fly',spin:'filt-spin'}[val]).classList.add('active');
   }
   if (type === 'water') {
-    document.querySelectorAll('#filt-water-all,#filt-water-river,#filt-water-lake,#filt-water-reservoir').forEach(b => b.classList.remove('active'));
-    const map = {all:'filt-water-all', river:'filt-water-river', lake:'filt-water-lake', reservoir:'filt-water-reservoir'};
-    document.getElementById(map[val]).classList.add('active');
+    ['filt-water-all','filt-water-river','filt-water-lake','filt-water-reservoir'].forEach(id => document.getElementById(id).classList.remove('active'));
+    document.getElementById({all:'filt-water-all',river:'filt-water-river',lake:'filt-water-lake',reservoir:'filt-water-reservoir'}[val]).classList.add('active');
   }
   applyFilters();
 }
 
 function spotMatchesFilters(spot) {
-  const poleOk = activeFilters.pole === 'all' ||
-    spot.pole === activeFilters.pole ||
-    spot.pole === 'both' ||
-    (activeFilters.pole === 'fly' && spot.pole === 'both') ||
-    (activeFilters.pole === 'spin' && spot.pole === 'both');
-  
-  let waterType = spot.type;
-  if (waterType === 'canal') waterType = 'lake'; // group canal with lake
-  const waterOk = activeFilters.water === 'all' || waterType === activeFilters.water;
+  const poleOk = activeFilters.pole === 'all' || spot.pole === activeFilters.pole || spot.pole === 'both';
+  let wt = spot.type === 'canal' ? 'lake' : spot.type;
+  const waterOk = activeFilters.water === 'all' || wt === activeFilters.water;
   return poleOk && waterOk;
 }
 
@@ -880,35 +961,31 @@ function applyFilters() {
   });
   document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
   document.getElementById('filter-count').textContent = visible + ' spot' + (visible !== 1 ? 's' : '');
-
-  // hide step 2/3 if selected spot no longer visible
   if (selectedSpot && !spotMatchesFilters(selectedSpot)) {
     document.getElementById('fish-section').style.display = 'none';
     document.getElementById('how-section').style.display = 'none';
     setStep(1);
     selectedSpot = null;
-    selectedFish = null;
     document.querySelectorAll('.spot-btn').forEach(b => b.classList.remove('selected'));
   }
 }
 
 function setStep(n) {
-  [1,2,3].forEach(i => {
-    document.getElementById('step'+i).classList.toggle('active', i <= n);
-  });
+  [1,2,3].forEach(i => document.getElementById('step'+i).classList.toggle('active', i <= n));
 }
 
 function buildSpots() {
-  const grid = document.getElementById('spot-grid');
   const iconMap = {river:'ti-wave-sine', lake:'ti-ripple', canal:'ti-current-location', reservoir:'ti-droplet'};
   const poleChipClass = {fly:'fly', spin:'spin', both:'both'};
-  const poleChipLabel = {fly:'<i class="ti ti-feather" style="font-size:10px"></i> Fly', spin:'<i class="ti ti-hook" style="font-size:10px"></i> Spin/bait', both:'<i class="ti ti-adjustments-horizontal" style="font-size:10px"></i> Fly or spin'};
-  const diffClass = {beginner:'beginner', intermediate:'intermediate', advanced:'advanced'};
-
-  grid.innerHTML = SPOTS.map(s => `
+  const poleChipLabel = {
+    fly:'<i class="ti ti-feather" style="font-size:10px"></i> Fly',
+    spin:'<i class="ti ti-hook" style="font-size:10px"></i> Spin/bait',
+    both:'<i class="ti ti-adjustments-horizontal" style="font-size:10px"></i> Fly or spin'
+  };
+  document.getElementById('spot-grid').innerHTML = SPOTS.map(s => `
     <button class="spot-btn" id="spot-${s.id}" onclick="pickSpot('${s.id}')">
       <div class="spot-btn-head">
-        <div class="spot-icon ${s.type}"><i class="ti ${iconMap[s.type]}" aria-hidden="true"></i></div>
+        <div class="spot-icon ${s.type}"><i class="ti ${iconMap[s.type]}"></i></div>
         <div>
           <p class="spot-name">${s.name} <span class="diff-badge ${s.difficulty}">${DIFF_LABELS[s.difficulty]}</span></p>
           <p class="spot-type">${s.typeLabel}</p>
@@ -920,129 +997,78 @@ function buildSpots() {
         <span class="chip fish"><i class="ti ti-fish" style="font-size:10px"></i> ${s.fish.map(f=>f.name).join(' · ')}</span>
         ${s.alerts.map(a=>`<span class="chip alert"><i class="ti ti-alert-triangle" style="font-size:10px"></i> ${a}</span>`).join('')}
       </div>
-    </button>
-  `).join('');
-
+    </button>`).join('');
   document.getElementById('filter-count').textContent = SPOTS.length + ' spots';
 }
 
 function pickSpot(id) {
   selectedSpot = SPOTS.find(s => s.id === id);
-  selectedFish = null;
-
   document.querySelectorAll('.spot-btn').forEach(b => b.classList.remove('selected'));
   document.getElementById('spot-'+id).classList.add('selected');
-
-  buildFish(selectedSpot);
+  const poleChipClass = {fly:'fly', spin:'spin', both:'both'};
+  document.getElementById('fish-grid').innerHTML = selectedSpot.fish.map(f => {
+    const c = FISH_COLORS[f.color] || FISH_COLORS.blue;
+    return `<button class="fish-btn" id="fish-${f.id}" onclick="pickFish('${f.id}')">
+      <div class="fish-ico" style="background:${c.bg};color:${c.tx};"><i class="ti ${f.ico}"></i></div>
+      <div>
+        <p class="fish-label">${f.name}</p>
+        <p class="fish-sub">${f.sub}</p>
+        <span class="pole-badge ${poleChipClass[f.pole]}">${POLE_LABELS[f.pole]}</span>
+      </div>
+    </button>`;
+  }).join('');
   document.getElementById('fish-section').style.display = 'block';
   document.getElementById('how-section').style.display = 'none';
   setStep(2);
-
-  setTimeout(() => {
-    document.getElementById('fish-section').scrollIntoView({behavior:'smooth', block:'start'});
-  }, 80);
-}
-
-function buildFish(spot) {
-  const grid = document.getElementById('fish-grid');
-  const poleClass = {fly:'fly', spin:'spin', both:'both'};
-  grid.innerHTML = spot.fish.map(f => {
-    const c = FISH_COLORS[f.color] || FISH_COLORS.blue;
-    return `
-      <button class="fish-btn" id="fish-${f.id}" onclick="pickFish('${f.id}')">
-        <div class="fish-ico" style="background:${c.bg};color:${c.tx};"><i class="ti ${f.ico}" aria-hidden="true"></i></div>
-        <div>
-          <p class="fish-label">${f.name}</p>
-          <p class="fish-sub">${f.sub}</p>
-          <span class="pole-badge ${poleClass[f.pole]}">${POLE_LABELS[f.pole]}</span>
-        </div>
-      </button>
-    `;
-  }).join('');
+  setTimeout(() => document.getElementById('fish-section').scrollIntoView({behavior:'smooth',block:'start'}), 80);
 }
 
 function pickFish(id) {
   if (!selectedSpot) return;
-  selectedFish = selectedSpot.fish.find(f => f.id === id);
-
+  const fish = selectedSpot.fish.find(f => f.id === id);
   document.querySelectorAll('.fish-btn').forEach(b => b.classList.remove('selected'));
   document.getElementById('fish-'+id).classList.add('selected');
-
-  buildHowTo(selectedFish, selectedSpot);
-  document.getElementById('how-section').style.display = 'block';
-  setStep(3);
-
-  setTimeout(() => {
-    document.getElementById('how-section').scrollIntoView({behavior:'smooth', block:'start'});
-  }, 80);
-}
-
-function buildHowTo(fish, spot) {
   const c = FISH_COLORS[fish.color] || FISH_COLORS.blue;
-  const poleClass = {fly:'fly', spin:'spin', both:'both'};
-  const diffClass = {beginner:'beginner', intermediate:'intermediate', advanced:'advanced'};
-  const card = document.getElementById('how-card');
-  card.innerHTML = `
+  const poleChipClass = {fly:'fly', spin:'spin', both:'both'};
+  document.getElementById('how-card').innerHTML = `
     <div class="how-header">
-      <div class="how-fish-ico" style="background:${c.bg};color:${c.tx};"><i class="ti ${fish.ico}" aria-hidden="true"></i></div>
+      <div class="how-fish-ico" style="background:${c.bg};color:${c.tx};"><i class="ti ${fish.ico}"></i></div>
       <div>
-        <p class="how-fish-name">${fish.name} <span class="pole-badge ${poleClass[fish.pole]}">${POLE_LABELS[fish.pole]}</span></p>
-        <p class="how-fish-at"><i class="ti ti-map-pin" style="font-size:11px;vertical-align:-1px;"></i> ${spot.name} &nbsp;<span class="diff-badge ${spot.difficulty}">${DIFF_LABELS[spot.difficulty]}</span></p>
+        <p class="how-fish-name">${fish.name} <span class="pole-badge ${poleChipClass[fish.pole]}">${POLE_LABELS[fish.pole]}</span></p>
+        <p class="how-fish-at"><i class="ti ti-map-pin" style="font-size:11px;vertical-align:-1px;"></i> ${selectedSpot.name} <span class="diff-badge ${selectedSpot.difficulty}">${DIFF_LABELS[selectedSpot.difficulty]}</span></p>
       </div>
     </div>
     <div class="how-body">
       <div class="how-row">
-        <div class="how-icon-wrap"><i class="ti ti-map" aria-hidden="true"></i></div>
-        <div class="how-col">
-          <p class="how-label">Where to find them</p>
-          <p class="how-val">${fish.where}</p>
-        </div>
+        <div class="how-icon-wrap"><i class="ti ti-map"></i></div>
+        <div class="how-col"><p class="how-label">Where to find them</p><p class="how-val">${fish.where}</p></div>
       </div>
       <div class="how-row">
-        <div class="how-icon-wrap"><i class="ti ti-hook" aria-hidden="true"></i></div>
-        <div class="how-col">
-          <p class="how-label">Rig</p>
-          <p class="how-val"><strong>${fish.rig}</strong></p>
-        </div>
+        <div class="how-icon-wrap"><i class="ti ti-hook"></i></div>
+        <div class="how-col"><p class="how-label">Rig</p><p class="how-val"><strong>${fish.rig}</strong></p></div>
       </div>
       <div class="how-row">
-        <div class="how-icon-wrap"><i class="ti ti-fish" aria-hidden="true"></i></div>
-        <div class="how-col">
-          <p class="how-label">Bait / fly / lure</p>
-          <p class="how-val">${fish.bait.split(' · ').map(b=>`<span class="tag">${b}</span>`).join('')}</p>
-        </div>
+        <div class="how-icon-wrap"><i class="ti ti-fish"></i></div>
+        <div class="how-col"><p class="how-label">Bait / fly / lure</p><p class="how-val">${fish.bait.split(' · ').map(b=>`<span class="tag">${b}</span>`).join('')}</p></div>
       </div>
       <div class="how-row">
-        <div class="how-icon-wrap"><i class="ti ti-tool" aria-hidden="true"></i></div>
-        <div class="how-col">
-          <p class="how-label">Gear setup</p>
-          <p class="how-val">${fish.gear}</p>
-        </div>
+        <div class="how-icon-wrap"><i class="ti ti-tool"></i></div>
+        <div class="how-col"><p class="how-label">Gear setup</p><p class="how-val">${fish.gear}</p></div>
       </div>
       <div class="how-row">
-        <div class="how-icon-wrap"><i class="ti ti-hand-finger" aria-hidden="true"></i></div>
-        <div class="how-col">
-          <p class="how-label">Technique</p>
-          <p class="how-val">${fish.technique}</p>
-        </div>
+        <div class="how-icon-wrap"><i class="ti ti-hand-finger"></i></div>
+        <div class="how-col"><p class="how-label">Technique</p><p class="how-val">${fish.technique}</p></div>
       </div>
       <div class="how-row">
-        <div class="how-icon-wrap"><i class="ti ti-clock" aria-hidden="true"></i></div>
-        <div class="how-col">
-          <p class="how-label">Best time</p>
-          <p class="how-val">${fish.bestTime}</p>
-        </div>
+        <div class="how-icon-wrap"><i class="ti ti-clock"></i></div>
+        <div class="how-col"><p class="how-label">Best time</p><p class="how-val">${fish.bestTime}</p></div>
       </div>
-      <div class="tip-box">
-        <i class="ti ti-bulb"></i>
-        <span>${fish.tip}</span>
-      </div>
-      <div class="access-box">
-        <i class="ti ti-parking"></i>
-        <span><strong>Access:</strong> ${fish.access}</span>
-      </div>
-    </div>
-  `;
+      <div class="tip-box"><i class="ti ti-bulb"></i><span>${fish.tip}</span></div>
+      <div class="access-box"><i class="ti ti-parking"></i><span><strong>Access:</strong> ${fish.access}</span></div>
+    </div>`;
+  document.getElementById('how-section').style.display = 'block';
+  setStep(3);
+  setTimeout(() => document.getElementById('how-section').scrollIntoView({behavior:'smooth',block:'start'}), 80);
 }
 
 buildSpots();
