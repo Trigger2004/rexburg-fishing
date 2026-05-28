@@ -1,0 +1,316 @@
+
+<h2 class="sr-only">Rexburg Area Fishing Decision Guide — filter by species, water type, or time of day to find the best spot and gear setup</h2>
+
+<style>
+  .fg-root { padding: 1rem 0; font-family: var(--font-sans); }
+  .fg-title { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px; }
+  .fg-sub { font-size: 14px; color: var(--color-text-secondary); margin: 0 0 1.5rem; }
+  .fg-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem; }
+  .fg-filter-group { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 140px; }
+  .fg-filter-group label { font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+  .fg-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+  .fg-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; cursor: pointer; transition: border-color 0.15s; }
+  .fg-card:hover { border-color: var(--color-border-secondary); }
+  .fg-card.expanded { border-color: var(--color-border-primary); }
+  .fg-card-head { display: flex; align-items: flex-start; gap: 10px; }
+  .fg-icon { width: 36px; height: 36px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+  .fg-icon.river { background: #E6F1FB; color: #185FA5; }
+  .fg-icon.lake { background: #E1F5EE; color: #0F6E56; }
+  .fg-icon.canal { background: #FAEEDA; color: #854F0B; }
+  .fg-name { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; }
+  .fg-type { font-size: 12px; color: var(--color-text-secondary); margin: 0; }
+  .fg-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+  .fg-badge { font-size: 11px; padding: 3px 8px; border-radius: 99px; font-weight: 500; }
+  .fg-badge.species { background: #E6F1FB; color: #185FA5; }
+  .fg-badge.time { background: #EAF3DE; color: #3B6D11; }
+  .fg-badge.access { background: #F1EFE8; color: #5F5E5A; }
+  .fg-badge.alert { background: #FAEEDA; color: #854F0B; }
+  .fg-detail { margin-top: 12px; border-top: 0.5px solid var(--color-border-tertiary); padding-top: 12px; display: none; }
+  .fg-card.expanded .fg-detail { display: block; }
+  .fg-detail-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+  .fg-detail-row i { font-size: 16px; color: var(--color-text-secondary); flex-shrink: 0; margin-top: 2px; }
+  .fg-detail-label { font-size: 12px; color: var(--color-text-secondary); min-width: 56px; flex-shrink: 0; }
+  .fg-detail-val { font-size: 13px; color: var(--color-text-primary); }
+  .fg-expand-hint { font-size: 11px; color: var(--color-text-tertiary); text-align: right; margin-top: 8px; }
+  .fg-empty { font-size: 14px; color: var(--color-text-secondary); padding: 2rem 0; text-align: center; }
+  .fg-today-bar { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 14px; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .fg-today-label { font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; flex-shrink: 0; }
+  .fg-today-val { font-size: 13px; color: var(--color-text-primary); font-weight: 500; }
+  .fg-today-divider { color: var(--color-border-secondary); }
+</style>
+
+<div class="fg-root">
+  <p class="fg-title">Rexburg Area Fishing Guide</p>
+  <p class="fg-sub">Tap any card to see gear, bait, and access details</p>
+
+  <div class="fg-today-bar">
+    <span class="fg-today-label">Today (Thu May 28)</span>
+    <span class="fg-today-val">Waxing Gibbous</span>
+    <span class="fg-today-divider">·</span>
+    <span class="fg-today-val">Major bite: 10:26 AM–12:26 PM</span>
+    <span class="fg-today-divider">·</span>
+    <span class="fg-today-val">Minor bite: 5:55–7:55 PM</span>
+    <span class="fg-today-divider">·</span>
+    <span class="fg-today-val" style="color:#3B6D11">Hatching: Midges, BWOs, Caddis</span>
+  </div>
+
+  <div class="fg-filters">
+    <div class="fg-filter-group">
+      <label>Water type</label>
+      <select id="filt-type" onchange="renderCards()">
+        <option value="all">All waters</option>
+        <option value="river">Rivers</option>
+        <option value="lake">Stillwaters</option>
+        <option value="canal">Canals / sloughs</option>
+      </select>
+    </div>
+    <div class="fg-filter-group">
+      <label>Target species</label>
+      <select id="filt-species" onchange="renderCards()">
+        <option value="all">Any species</option>
+        <option value="trout">Trout (any)</option>
+        <option value="bass">Bass</option>
+        <option value="kokanee">Kokanee salmon</option>
+        <option value="perch">Yellow perch</option>
+        <option value="brown">Brown trout</option>
+        <option value="cutthroat">Cutthroat trout</option>
+      </select>
+    </div>
+    <div class="fg-filter-group">
+      <label>Best time today</label>
+      <select id="filt-time" onchange="renderCards()">
+        <option value="all">Any time</option>
+        <option value="dawn">Dawn (5–8 AM)</option>
+        <option value="morning">Mid-morning (8 AM–12 PM)</option>
+        <option value="afternoon">Afternoon (12–5 PM)</option>
+        <option value="dusk">Dusk / evening (5–9 PM)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="fg-cards" id="fg-cards"></div>
+</div>
+
+<script>
+const SPOTS = [
+  {
+    id: 'wakeside',
+    name: 'Wakeside Lake',
+    type: 'lake',
+    typeLabel: 'Private spring-fed stillwater',
+    species: ['bass','trout'],
+    speciesLabel: 'Largemouth bass, rainbow trout',
+    times: ['dawn','dusk'],
+    timeLabel: 'Dawn & late evening',
+    gear: 'Wacky-rigged 4" Senko (green pumpkin) on size 1 wide-gap hook; drop-shot Jackall Crosstail Shad (baby bass color)',
+    bait: 'Soft plastics only — weightless or drop-shot rigs for clear water',
+    access: 'Bank access only. Day-use fee: $10 half-day, $20 full-day',
+    alerts: [],
+    solunar: 'Dawn peak 100% activity; late evening 90% activity'
+  },
+  {
+    id: 'teton-upper',
+    name: 'Teton River — Upper Valley',
+    type: 'river',
+    typeLabel: 'Low-gradient riverine corridor',
+    species: ['cutthroat','trout'],
+    speciesLabel: 'Yellowstone cutthroat, brook trout',
+    times: ['morning'],
+    timeLabel: 'Mid-morning PMD hatches (9 AM–12 PM)',
+    gear: '9-ft 5-weight fly rod, 4X–6X tapered leader. Comparadun, Sparkle Dun, foam hopper patterns',
+    bait: 'Fly fishing. Current hatch: Midges (#18–22), BWOs (#16–22), Caddis (#10–18)',
+    access: 'Wade access only. Wild cutthroat are catch-and-release only',
+    alerts: ['CLOSED June 1–30 for cutthroat spawning'],
+    solunar: 'Mid-morning solunar window aligns with PMD hatches today'
+  },
+  {
+    id: 'teton-canyon',
+    name: 'Teton River — Felt Canyon',
+    type: 'river',
+    typeLabel: 'High-gradient basalt canyon',
+    species: ['trout','brown'],
+    speciesLabel: 'Wild rainbow, cutthroat-rainbow hybrids (cutt-bows)',
+    times: ['dawn','dusk'],
+    timeLabel: 'Dawn & dusk feeding windows',
+    gear: '5–6 weight fly rod. Stimulator, Elk Hair Caddis, streamer patterns for larger fish',
+    bait: 'Fly fishing. Tight quarters — roll casts required in canyon',
+    access: 'Limited road access. Wading only. Remote — plan accordingly',
+    alerts: [],
+    solunar: 'Best aligned with dawn solunar peak today (10:26 AM)'
+  },
+  {
+    id: 'ririe',
+    name: 'Ririe Reservoir',
+    type: 'lake',
+    typeLabel: '1,414-acre deep-water impoundment',
+    species: ['kokanee','perch','trout'],
+    speciesLabel: 'Kokanee salmon, yellow perch, tiger trout, smallmouth bass',
+    times: ['dawn','afternoon'],
+    timeLabel: 'Dawn trolling & deep-water afternoon bites',
+    gear: 'Trolling: clip-weight rig (2–4 oz) + dodger + hoochie lure (corn scented with tuna/krill). Perch: bottom jig tipped with perch eye or belly meat',
+    bait: 'Synthetic hoochie + shoepeg corn for kokanee; perch eyes/belly for perch schooling at 30–50 ft near Juniper ramp',
+    access: 'Concrete boat ramps at Juniper and Blacktail. Boarding docks. ~30 miles south of Rexburg',
+    alerts: [],
+    solunar: 'Dawn peak is prime for kokanee trolling depth 20–40 ft'
+  },
+  {
+    id: 'southfork',
+    name: 'South Fork Snake — Lorenzo to Menan',
+    type: 'river',
+    typeLabel: 'Warm, high-turbidity 8-mile stretch',
+    species: ['brown','trout','cutthroat'],
+    speciesLabel: 'Trophy brown trout, rainbow, cutthroat',
+    times: ['dusk','afternoon'],
+    timeLabel: 'Dusk & overcast afternoons',
+    gear: 'Medium spin rod: trolled minnow plugs; articulated black/olive streamers. Foam hopper patterns in late summer',
+    bait: 'Large minnow plugs for brown trout in deep outside bends, clay banks, and cottonwood logjams',
+    access: 'BLM Lorenzo boat ramp ($3 fee), day use only. Cutthroat catch-and-release',
+    alerts: [],
+    solunar: 'Dusk minor bite window 5:55–7:55 PM aligns well today'
+  },
+  {
+    id: 'sandcreek',
+    name: 'Sand Creek WMA — Pond 4',
+    type: 'lake',
+    typeLabel: '100-acre volcanic WMA stillwater',
+    species: ['trout'],
+    speciesLabel: 'Stocked rainbow trout, wild brook trout',
+    times: ['afternoon','dusk'],
+    timeLabel: 'Late afternoon (3–6 PM)',
+    gear: 'Ultralight spin rod with gold inline spinners. Wet fly patterns from a float tube',
+    bait: 'Stocked triploid rainbows respond well to spinners and nightcrawlers',
+    access: 'Concrete ramp, boarding dock, 25 primitive campsites ($10/night). Non-motorized boats allowed July 16–Apr 15',
+    alerts: ['CLOSED Jan 1–July 1 for waterfowl nesting','Bear country — food storage required'],
+    solunar: 'Late afternoon minor window. Non-motorized only until July 16'
+  },
+  {
+    id: 'warmriver',
+    name: 'Warm River',
+    type: 'river',
+    typeLabel: 'Spring-fed Henry\'s Fork tributary',
+    species: ['trout','brown'],
+    speciesLabel: 'Brook trout, rainbow trout, mountain whitefish',
+    times: ['morning','afternoon'],
+    timeLabel: 'Midday (stable temps year-round)',
+    gear: '3-weight fly rod. Zebra Midges (#18–22) fished deep under an indicator; single dry attractor flies',
+    bait: 'Fly fishing. Geothermal spring keeps temps stable — productive even in winter',
+    access: 'Accessible from Warm River Campground near Ashton. Wading required',
+    alerts: [],
+    solunar: 'Midday session; stable spring temps make this fishable any time'
+  },
+  {
+    id: 'henryfork',
+    name: 'Henry\'s Fork — Beaver Dick Park',
+    type: 'river',
+    typeLabel: 'Renowned tailwater / freestone hybrid',
+    species: ['trout','brown','cutthroat'],
+    speciesLabel: 'Brown trout, rainbow, cutthroat, mountain whitefish',
+    times: ['dawn','dusk'],
+    timeLabel: 'Dawn & dusk feeding windows',
+    gear: '5–6 weight fly rod. PMD Comparadun, Elk Hair Caddis, large streamer for big browns at dusk',
+    bait: 'Fly fishing. Current hatch: Midges, BWOs, Caddis. Public land gives access to wide stretches',
+    access: '4.5 miles west of Rexburg on Hwy 33. 400 acres of BLM/Shoshone-Bannock public land access',
+    alerts: [],
+    solunar: 'Dawn major bite 10:26 AM–12:26 PM; dusk minor 5:55–7:55 PM'
+  },
+  {
+    id: 'cityponds',
+    name: 'Rexburg City Ponds',
+    type: 'lake',
+    typeLabel: '6.5-acre municipal park waterbody',
+    species: ['trout','perch'],
+    speciesLabel: 'Triploid rainbow trout, channel catfish, yellow perch',
+    times: ['dusk','afternoon'],
+    timeLabel: 'Evening twilight (5–8 PM)',
+    gear: 'Ultralight spin tackle, slip bobber + nightcrawler, or marshmallow/egg bait rig on bottom',
+    bait: 'No gear or bait restrictions ("Family Fishing Waters"). Marshmallow floats bait off the muddy bottom',
+    access: 'Walking paths, handicap-accessible restrooms. Smaller pond reserved for kids under 14',
+    alerts: [],
+    solunar: 'Evening minor bite window (5:55–7:55 PM) great for stocked trout at dusk'
+  },
+  {
+    id: 'southcanal',
+    name: 'South Branch Rexburg Canal',
+    type: 'canal',
+    typeLabel: 'High-flow irrigation canal',
+    species: ['trout','perch'],
+    speciesLabel: 'Rainbow trout, yellow perch, smallmouth bass',
+    times: ['dawn'],
+    timeLabel: 'Dawn peak (5–8 AM)',
+    gear: 'Floating bait rigs, inline spinners, or bottom-bounced nightcrawlers',
+    bait: 'Connected to South Fork of Teton River — wild trout, perch, and bass enter seasonally',
+    access: 'Road crossings and bridge rights-of-way. Verify property boundaries before access',
+    alerts: [],
+    solunar: 'Dawn peak window today: 10:26 AM for major bite'
+  }
+];
+
+function matchesFilters(spot) {
+  const t = document.getElementById('filt-type').value;
+  const s = document.getElementById('filt-species').value;
+  const tm = document.getElementById('filt-time').value;
+  if (t !== 'all' && spot.type !== t) return false;
+  if (s !== 'all' && !spot.species.includes(s)) return false;
+  if (tm !== 'all' && !spot.times.includes(tm)) return false;
+  return true;
+}
+
+function renderCards() {
+  const container = document.getElementById('fg-cards');
+  const filtered = SPOTS.filter(matchesFilters);
+  if (filtered.length === 0) {
+    container.innerHTML = '<p class="fg-empty">No spots match those filters — try broadening your search.</p>';
+    return;
+  }
+  container.innerHTML = filtered.map(spot => `
+    <div class="fg-card" id="card-${spot.id}" onclick="toggleCard('${spot.id}')">
+      <div class="fg-card-head">
+        <div class="fg-icon ${spot.type}">
+          <i class="ti ${spot.type === 'river' ? 'ti-wave-sine' : spot.type === 'lake' ? 'ti-ripple' : 'ti-current-location'}" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="fg-name">${spot.name}</p>
+          <p class="fg-type">${spot.typeLabel}</p>
+        </div>
+      </div>
+      <div class="fg-badges">
+        <span class="fg-badge species">${spot.speciesLabel}</span>
+        <span class="fg-badge time"><i class="ti ti-clock" style="font-size:11px"></i> ${spot.timeLabel}</span>
+        ${spot.alerts.map(a => `<span class="fg-badge alert"><i class="ti ti-alert-triangle" style="font-size:11px"></i> ${a}</span>`).join('')}
+      </div>
+      <div class="fg-detail">
+        <div class="fg-detail-row">
+          <i class="ti ti-tool" aria-hidden="true"></i>
+          <span class="fg-detail-label">Gear</span>
+          <span class="fg-detail-val">${spot.gear}</span>
+        </div>
+        <div class="fg-detail-row">
+          <i class="ti ti-fish" aria-hidden="true"></i>
+          <span class="fg-detail-label">Bait / fly</span>
+          <span class="fg-detail-val">${spot.bait}</span>
+        </div>
+        <div class="fg-detail-row">
+          <i class="ti ti-map-pin" aria-hidden="true"></i>
+          <span class="fg-detail-label">Access</span>
+          <span class="fg-detail-val">${spot.access}</span>
+        </div>
+        <div class="fg-detail-row">
+          <i class="ti ti-moon" aria-hidden="true"></i>
+          <span class="fg-detail-label">Solunar</span>
+          <span class="fg-detail-val">${spot.solunar}</span>
+        </div>
+      </div>
+      <p class="fg-expand-hint" id="hint-${spot.id}">Tap to expand</p>
+    </div>
+  `).join('');
+}
+
+function toggleCard(id) {
+  const card = document.getElementById('card-' + id);
+  const hint = document.getElementById('hint-' + id);
+  card.classList.toggle('expanded');
+  hint.textContent = card.classList.contains('expanded') ? 'Tap to collapse' : 'Tap to expand';
+}
+
+renderCards();
+</script>
