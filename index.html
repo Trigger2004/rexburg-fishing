@@ -6,792 +6,668 @@
 <title>Rexburg Area Fishing Guide</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-  :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f4f0;
-    --bg-tertiary: #eeede8;
-    --text-primary: #1a1a18;
-    --text-secondary: #5f5e5a;
-    --text-tertiary: #888780;
-    --border-light: rgba(0,0,0,0.1);
-    --border-mid: rgba(0,0,0,0.18);
-    --border-strong: rgba(0,0,0,0.28);
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --blue-bg: #E6F1FB;
-    --blue-text: #185FA5;
-    --green-bg: #EAF3DE;
-    --green-text: #3B6D11;
-    --gray-bg: #F1EFE8;
-    --gray-text: #5F5E5A;
-    --amber-bg: #FAEEDA;
-    --amber-text: #854F0B;
-    --teal-bg: #E1F5EE;
-    --teal-text: #0F6E56;
+:root{
+  --bg:#ffffff;--bg2:#f5f4f0;--bg3:#eeede8;
+  --tx:#1a1a18;--tx2:#5f5e5a;--tx3:#888780;
+  --bl:rgba(0,0,0,0.09);--bm:rgba(0,0,0,0.16);--bs:rgba(0,0,0,0.26);
+  --r:8px;--rl:12px;
+  --blue-bg:#E6F1FB;--blue-tx:#185FA5;
+  --green-bg:#EAF3DE;--green-tx:#3B6D11;
+  --amber-bg:#FAEEDA;--amber-tx:#854F0B;
+  --teal-bg:#E1F5EE;--teal-tx:#0F6E56;
+  --coral-bg:#FAECE7;--coral-tx:#993C1D;
+  --purple-bg:#EEEDFE;--purple-tx:#534AB7;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1e1e1c;--bg2:#272724;--bg3:#2e2e2b;
+    --tx:#f0ede6;--tx2:#a8a69f;--tx3:#6e6c66;
+    --bl:rgba(255,255,255,0.07);--bm:rgba(255,255,255,0.13);--bs:rgba(255,255,255,0.22);
+    --blue-bg:#0c447c;--blue-tx:#b5d4f4;
+    --green-bg:#27500a;--green-tx:#c0dd97;
+    --amber-bg:#633806;--amber-tx:#fac775;
+    --teal-bg:#085041;--teal-tx:#9fe1cb;
+    --coral-bg:#4a1b0c;--coral-tx:#f0997b;
+    --purple-bg:#26215c;--purple-tx:#afa9ec;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-primary: #1e1e1c;
-      --bg-secondary: #272724;
-      --bg-tertiary: #2e2e2b;
-      --text-primary: #f0ede6;
-      --text-secondary: #a8a69f;
-      --text-tertiary: #6e6c66;
-      --border-light: rgba(255,255,255,0.08);
-      --border-mid: rgba(255,255,255,0.14);
-      --border-strong: rgba(255,255,255,0.22);
-      --blue-bg: #0c447c;
-      --blue-text: #b5d4f4;
-      --green-bg: #27500a;
-      --green-text: #c0dd97;
-      --gray-bg: #444441;
-      --gray-text: #d3d1c7;
-      --amber-bg: #633806;
-      --amber-text: #fac775;
-      --teal-bg: #085041;
-      --teal-text: #9fe1cb;
-    }
-  }
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg3);color:var(--tx);min-height:100vh;}
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-    min-height: 100vh;
-    padding: 0;
-  }
+/* ── HERO ── */
+.hero{background:var(--bg);border-bottom:0.5px solid var(--bl);padding:1.5rem 1rem 1rem;}
+.hero-inner{max-width:900px;margin:0 auto;}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+.hero-title{font-size:22px;font-weight:500;color:var(--tx);display:flex;align-items:center;gap:8px;}
+.hero-title i{font-size:20px;color:var(--blue-tx);}
+.built-by{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:0.5px solid var(--bl);border-radius:99px;padding:4px 12px;font-size:11px;color:var(--tx3);flex-shrink:0;}
+.built-by strong{color:var(--tx2);font-weight:500;}
+.hero-sub{font-size:13px;color:var(--tx2);margin-bottom:14px;line-height:1.5;}
 
-  .page-header {
-    background: var(--bg-primary);
-    border-bottom: 0.5px solid var(--border-light);
-    padding: 1.25rem 1rem 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+/* steps */
+.steps{display:flex;gap:0;margin-bottom:16px;background:var(--bg2);border:0.5px solid var(--bl);border-radius:var(--rl);overflow:hidden;}
+.step{flex:1;padding:8px 10px;text-align:center;font-size:11px;color:var(--tx3);border-right:0.5px solid var(--bl);display:flex;align-items:center;justify-content:center;gap:5px;}
+.step:last-child{border-right:none;}
+.step .num{width:18px;height:18px;border-radius:50%;background:var(--bg3);border:0.5px solid var(--bm);font-size:10px;font-weight:500;color:var(--tx2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step.active .num{background:var(--blue-bg);border-color:var(--blue-tx);color:var(--blue-tx);}
+.step.active{color:var(--tx);}
+.step-label{display:none;}
+@media(min-width:480px){.step-label{display:inline;}}
 
-  .header-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+/* solunar bar */
+.sol-bar{background:var(--bg2);border:0.5px solid var(--bl);border-radius:var(--r);padding:8px 12px;display:flex;flex-wrap:wrap;gap:5px 10px;align-items:center;font-size:12px;}
+.sol-lbl{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:.05em;flex-shrink:0;}
+.sol-val{color:var(--tx);font-weight:500;}
+.sol-val.g{color:var(--green-tx);}
+.dot{color:var(--bm);}
 
-  .page-title {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 2px;
-  }
+/* ── MAIN ── */
+.main{max-width:900px;margin:0 auto;padding:1rem;}
 
-  .page-sub {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-  }
+/* ── SPOT LIST ── */
+.section-label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.spot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-bottom:1.5rem;}
+@media(max-width:560px){.spot-grid{grid-template-columns:1fr;}}
 
-  .today-bar {
-    background: var(--bg-secondary);
-    border: 0.5px solid var(--border-light);
-    border-radius: var(--radius-md);
-    padding: 9px 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 12px;
-  }
+.spot-btn{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:.9rem 1rem;cursor:pointer;text-align:left;width:100%;transition:border-color .12s;display:flex;flex-direction:column;gap:8px;}
+.spot-btn:hover{border-color:var(--bm);}
+.spot-btn.selected{border-color:var(--blue-tx);border-width:1.5px;}
+.spot-btn-head{display:flex;align-items:flex-start;gap:9px;}
+.spot-icon{width:32px;height:32px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.spot-icon.river{background:var(--blue-bg);color:var(--blue-tx);}
+.spot-icon.lake{background:var(--teal-bg);color:var(--teal-tx);}
+.spot-icon.canal{background:var(--amber-bg);color:var(--amber-tx);}
+.spot-name{font-size:14px;font-weight:500;color:var(--tx);line-height:1.3;margin-bottom:1px;}
+.spot-type{font-size:11px;color:var(--tx3);}
+.spot-chips{display:flex;flex-wrap:wrap;gap:4px;}
+.chip{font-size:10px;padding:2px 7px;border-radius:99px;font-weight:500;display:inline-flex;align-items:center;gap:3px;}
+.chip.fish{background:var(--blue-bg);color:var(--blue-tx);}
+.chip.alert{background:var(--amber-bg);color:var(--amber-tx);}
+.chip.time{background:var(--green-bg);color:var(--green-tx);}
 
-  .today-label {
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 11px;
-    flex-shrink: 0;
-  }
+/* ── FISH PICKER ── */
+.fish-section{margin-bottom:1.5rem;display:none;}
+.fish-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.fish-btn{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:.7rem .9rem;cursor:pointer;display:flex;align-items:center;gap:8px;transition:border-color .12s;min-width:140px;}
+.fish-btn:hover{border-color:var(--bm);}
+.fish-btn.selected{border-color:var(--blue-tx);border-width:1.5px;}
+.fish-ico{width:28px;height:28px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.fish-label{font-size:13px;font-weight:500;color:var(--tx);}
+.fish-sub{font-size:11px;color:var(--tx3);}
 
-  .today-val {
-    color: var(--text-primary);
-    font-weight: 500;
-  }
+/* ── HOW TO CARD ── */
+.how-section{display:none;margin-bottom:2rem;}
+.how-card{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);overflow:hidden;}
+.how-header{padding:1rem 1.1rem .9rem;border-bottom:0.5px solid var(--bl);display:flex;align-items:flex-start;gap:10px;}
+.how-fish-ico{width:38px;height:38px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.how-fish-name{font-size:16px;font-weight:500;color:var(--tx);margin-bottom:2px;}
+.how-fish-at{font-size:12px;color:var(--tx2);}
+.how-body{padding:1rem 1.1rem;}
+.how-row{display:flex;gap:10px;padding:.65rem 0;border-bottom:0.5px solid var(--bl);align-items:flex-start;}
+.how-row:last-child{border-bottom:none;}
+.how-icon-wrap{width:30px;height:30px;border-radius:var(--r);background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;color:var(--tx2);}
+.how-col{flex:1;}
+.how-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3);margin-bottom:3px;}
+.how-val{font-size:13px;color:var(--tx);line-height:1.55;}
+.how-val strong{font-weight:500;}
+.how-val .tag{display:inline-block;background:var(--bg2);border:0.5px solid var(--bl);border-radius:4px;font-size:11px;padding:1px 6px;margin:2px 2px 0 0;color:var(--tx2);}
 
-  .today-val.green { color: var(--green-text); }
+/* tip box */
+.tip-box{background:var(--green-bg);border-radius:var(--r);padding:.6rem .85rem;margin-top:.85rem;font-size:12px;color:var(--green-tx);display:flex;gap:7px;align-items:flex-start;line-height:1.5;}
+.tip-box i{flex-shrink:0;margin-top:1px;}
 
-  .today-dot {
-    color: var(--border-mid);
-    font-size: 10px;
-  }
+/* ── REFERENCE SECTIONS ── */
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:1.5rem;}
+@media(max-width:560px){.ref-grid{grid-template-columns:1fr;}}
+.ref-card{background:var(--bg);border:0.5px solid var(--bl);border-radius:var(--rl);padding:1rem 1.1rem;}
+.ref-title{font-size:13px;font-weight:500;color:var(--tx);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.ref-title i{color:var(--tx3);}
 
-  .filters {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
+.sol-table{width:100%;font-size:12px;border-collapse:collapse;}
+.sol-table th{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3);text-align:left;padding:3px 6px 5px;border-bottom:0.5px solid var(--bl);font-weight:500;}
+.sol-table td{padding:6px 6px;border-bottom:0.5px solid var(--bl);color:var(--tx);font-size:12px;vertical-align:top;}
+.sol-table tr:last-child td{border-bottom:none;}
+.sol-table tr.today td{background:var(--bg2);font-weight:500;}
+.sol-table td.dim{color:var(--tx3);}
+.moon-pill{font-size:10px;background:var(--bg2);border:0.5px solid var(--bl);border-radius:99px;padding:1px 6px;color:var(--tx3);white-space:nowrap;}
 
-  .filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    flex: 1;
-    min-width: 130px;
-  }
+.hatch-list{display:flex;flex-direction:column;gap:6px;}
+.hatch-row{display:flex;align-items:flex-start;gap:8px;font-size:12px;}
+.hatch-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px;}
+.hatch-dot.active{background:var(--green-tx);}
+.hatch-dot.soon{background:var(--amber-tx);}
+.hatch-name{font-weight:500;color:var(--tx);}
+.hatch-detail{color:var(--tx3);font-size:11px;}
 
-  .filter-group label {
-    font-size: 10px;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
+.reg-list{display:flex;flex-direction:column;gap:0;}
+.reg-row{display:flex;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--bl);font-size:12px;align-items:flex-start;}
+.reg-row:last-child{border-bottom:none;}
+.reg-row i{font-size:14px;color:var(--amber-tx);flex-shrink:0;margin-top:1px;}
+.reg-text{color:var(--tx);line-height:1.5;}
+.reg-text strong{font-weight:500;}
 
-  select {
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-mid);
-    border-radius: var(--radius-md);
-    padding: 7px 10px;
-    font-size: 13px;
-    color: var(--text-primary);
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    padding-right: 26px;
-  }
+.footer{text-align:center;font-size:11px;color:var(--tx3);padding:1.5rem 1rem 2rem;line-height:1.6;}
 
-  select:focus { outline: 2px solid var(--blue-bg); outline-offset: 1px; }
-
-  .main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  .result-count {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    margin-bottom: 10px;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 10px;
-  }
-
-  @media (max-width: 600px) {
-    .cards { grid-template-columns: 1fr; }
-    .filters { gap: 6px; }
-    .filter-group { min-width: 100%; }
-    .today-bar { gap: 4px 8px; }
-  }
-
-  .card {
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    padding: 1rem 1.1rem;
-    cursor: pointer;
-    transition: border-color 0.12s;
-    user-select: none;
-  }
-
-  .card:hover { border-color: var(--border-mid); }
-  .card.open { border-color: var(--border-strong); }
-
-  .card-head {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .card-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 17px;
-  }
-
-  .card-icon.river { background: var(--blue-bg); color: var(--blue-text); }
-  .card-icon.lake  { background: var(--teal-bg); color: var(--teal-text); }
-  .card-icon.canal { background: var(--amber-bg); color: var(--amber-text); }
-
-  .card-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 1px;
-    line-height: 1.3;
-  }
-
-  .card-type {
-    font-size: 11px;
-    color: var(--text-secondary);
-  }
-
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 10px;
-  }
-
-  .badge {
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 99px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-  }
-
-  .badge.species { background: var(--blue-bg); color: var(--blue-text); }
-  .badge.time    { background: var(--green-bg); color: var(--green-text); }
-  .badge.alert   { background: var(--amber-bg); color: var(--amber-text); }
-
-  .detail {
-    margin-top: 12px;
-    border-top: 0.5px solid var(--border-light);
-    padding-top: 12px;
-    display: none;
-  }
-
-  .card.open .detail { display: block; }
-
-  .detail-row {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 9px;
-    align-items: flex-start;
-  }
-
-  .detail-row:last-child { margin-bottom: 0; }
-
-  .detail-row i {
-    font-size: 15px;
-    color: var(--text-tertiary);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .detail-label {
-    font-size: 11px;
-    color: var(--text-secondary);
-    min-width: 52px;
-    flex-shrink: 0;
-    padding-top: 1px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  .detail-val {
-    font-size: 13px;
-    color: var(--text-primary);
-    line-height: 1.5;
-  }
-
-  .expand-hint {
-    font-size: 10px;
-    color: var(--text-tertiary);
-    text-align: right;
-    margin-top: 8px;
-  }
-
-  .empty {
-    font-size: 14px;
-    color: var(--text-secondary);
-    padding: 3rem 0;
-    text-align: center;
-    grid-column: 1/-1;
-  }
-
-  .solunar-section {
-    margin-top: 2rem;
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    padding: 1rem 1.1rem;
-  }
-
-  .section-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .sol-table {
-    width: 100%;
-    font-size: 12px;
-    border-collapse: collapse;
-  }
-
-  .sol-table th {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-tertiary);
-    text-align: left;
-    padding: 4px 8px 6px;
-    border-bottom: 0.5px solid var(--border-light);
-    font-weight: 500;
-  }
-
-  .sol-table td {
-    padding: 7px 8px;
-    border-bottom: 0.5px solid var(--border-light);
-    color: var(--text-primary);
-    vertical-align: top;
-  }
-
-  .sol-table tr:last-child td { border-bottom: none; }
-
-  .sol-table tr.today td {
-    background: var(--bg-secondary);
-    font-weight: 500;
-  }
-
-  .sol-table td.muted { color: var(--text-secondary); }
-  .sol-table td.phase { font-size: 11px; color: var(--text-secondary); }
-
-  .moon-badge {
-    display: inline-block;
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 99px;
-    background: var(--gray-bg);
-    color: var(--gray-text);
-    margin-left: 4px;
-  }
-
-  .hatch-section {
-    margin-top: 12px;
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    padding: 1rem 1.1rem;
-  }
-
-  .hatch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .hatch-card {
-    background: var(--bg-secondary);
-    border-radius: var(--radius-md);
-    padding: 8px 10px;
-  }
-
-  .hatch-name {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 2px;
-  }
-
-  .hatch-detail {
-    font-size: 11px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
-
-  .hatch-active {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green-text);
-    margin-right: 4px;
-    vertical-align: middle;
-  }
-
-  .regs-section {
-    margin-top: 12px;
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    padding: 1rem 1.1rem;
-  }
-
-  .reg-row {
-    display: flex;
-    gap: 8px;
-    padding: 8px 0;
-    border-bottom: 0.5px solid var(--border-light);
-    align-items: flex-start;
-    font-size: 13px;
-  }
-
-  .reg-row:last-child { border-bottom: none; }
-
-  .reg-icon { font-size: 15px; color: var(--amber-text); flex-shrink: 0; margin-top: 1px; }
-
-  .reg-text { color: var(--text-primary); line-height: 1.5; }
-
-  .reg-text strong { font-weight: 500; }
-
-  .footer {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-tertiary);
-    padding: 2rem 1rem;
-  }
-
-  @media (max-width: 480px) {
-    .sol-table th:nth-child(3),
-    .sol-table td:nth-child(3),
-    .sol-table th:nth-child(4),
-    .sol-table td:nth-child(4) { display: none; }
-    .page-title { font-size: 17px; }
-  }
+@media(max-width:480px){
+  .hero-title{font-size:18px;}
+  .sol-bar{font-size:11px;}
+  .sol-table th:nth-child(3),.sol-table td:nth-child(3),.sol-table th:nth-child(4),.sol-table td:nth-child(4){display:none;}
+}
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <div class="header-inner">
-    <p class="page-title"><i class="ti ti-ripple" aria-hidden="true" style="font-size:18px; vertical-align:-2px; margin-right:6px;"></i>Rexburg Area Fishing Guide</p>
-    <p class="page-sub">Tap any card for gear, bait &amp; access details</p>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <p class="hero-title"><i class="ti ti-ripple" aria-hidden="true"></i>Rexburg Fishing Guide</p>
+      <span class="built-by"><i class="ti ti-sparkles" aria-hidden="true" style="font-size:12px;"></i> Research by <strong>Gemini</strong> &nbsp;·&nbsp; Built with <strong>Claude</strong></span>
+    </div>
+    <p class="hero-sub">Pick a spot → pick a fish → get exact gear, bait &amp; technique.</p>
 
-    <div class="today-bar">
-      <span class="today-label">Today</span>
-      <span class="today-val">Thu May 28 · Waxing Gibbous</span>
-      <span class="today-dot">·</span>
-      <span class="today-val">Major bite: 10:26 AM–12:26 PM</span>
-      <span class="today-dot">·</span>
-      <span class="today-val">Minor bite: 5:55–7:55 PM</span>
-      <span class="today-dot">·</span>
-      <span class="today-val green"><i class="ti ti-bug" style="font-size:11px; vertical-align:-1px;"></i> Midges · BWOs · Caddis</span>
+    <div class="steps" id="steps">
+      <div class="step active" id="step1"><span class="num">1</span><span class="step-label">Pick a spot</span></div>
+      <div class="step" id="step2"><span class="num">2</span><span class="step-label">Pick a fish</span></div>
+      <div class="step" id="step3"><span class="num">3</span><span class="step-label">How to catch it</span></div>
     </div>
 
-    <div class="filters">
-      <div class="filter-group">
-        <label for="filt-type">Water type</label>
-        <select id="filt-type" onchange="renderCards()">
-          <option value="all">All waters</option>
-          <option value="river">Rivers</option>
-          <option value="lake">Stillwaters</option>
-          <option value="canal">Canals / sloughs</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filt-species">Target species</label>
-        <select id="filt-species" onchange="renderCards()">
-          <option value="all">Any species</option>
-          <option value="trout">Trout (any)</option>
-          <option value="bass">Bass</option>
-          <option value="kokanee">Kokanee salmon</option>
-          <option value="perch">Yellow perch</option>
-          <option value="brown">Brown trout</option>
-          <option value="cutthroat">Cutthroat trout</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filt-time">Best time</label>
-        <select id="filt-time" onchange="renderCards()">
-          <option value="all">Any time</option>
-          <option value="dawn">Dawn (5–8 AM)</option>
-          <option value="morning">Mid-morning (8 AM–12 PM)</option>
-          <option value="afternoon">Afternoon (12–5 PM)</option>
-          <option value="dusk">Dusk / evening (5–9 PM)</option>
-        </select>
-      </div>
+    <div class="sol-bar">
+      <span class="sol-lbl">Today</span>
+      <span class="sol-val">Thu May 28 · Waxing Gibbous</span>
+      <span class="dot">·</span>
+      <span class="sol-val">Major bite: 10:26 AM–12:26 PM</span>
+      <span class="dot">·</span>
+      <span class="sol-val">Minor bite: 5:55–7:55 PM</span>
+      <span class="dot">·</span>
+      <span class="sol-val g"><i class="ti ti-bug" style="font-size:11px;vertical-align:-1px;"></i> Midges · BWOs · Caddis</span>
     </div>
   </div>
 </div>
 
+<!-- MAIN -->
 <div class="main">
-  <p class="result-count" id="result-count"></p>
-  <div class="cards" id="cards"></div>
 
-  <!-- Solunar Table -->
-  <div class="solunar-section">
-    <p class="section-title"><i class="ti ti-moon" aria-hidden="true"></i> Weekly solunar bite windows</p>
-    <div style="overflow-x:auto;">
-      <table class="sol-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Major morning</th>
-            <th>Major evening</th>
-            <th>Minor evening</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="today">
-            <td><strong>Thu May 28</strong> <span class="moon-badge">Waxing Gibbous</span></td>
-            <td>10:26–12:26 PM</td>
-            <td class="muted">10:59 PM–12:59 AM</td>
-            <td>5:55–7:55 PM</td>
-          </tr>
-          <tr>
-            <td>Fri May 29 <span class="moon-badge">Full Moon</span></td>
-            <td>11:11 AM–1:11 PM</td>
-            <td class="muted">10:39 PM–12:39 AM</td>
-            <td>7:01–9:01 PM</td>
-          </tr>
-          <tr>
-            <td>Sat May 30 <span class="moon-badge">Full Moon</span></td>
-            <td>11:58 AM–1:58 PM</td>
-            <td class="muted">11:28 PM–1:28 AM</td>
-            <td>8:05–10:05 PM</td>
-          </tr>
-          <tr>
-            <td>Sun May 31 <span class="moon-badge">Full Moon</span></td>
-            <td>12:46–2:46 PM</td>
-            <td class="muted">12:20–2:20 AM</td>
-            <td>9:04–11:04 PM</td>
-          </tr>
-          <tr>
-            <td>Mon Jun 1 <span class="moon-badge">Full Moon</span></td>
-            <td>1:34–3:34 PM</td>
-            <td class="muted">1:12–3:12 AM</td>
-            <td>9:55–11:55 PM</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- STEP 1: SPOTS -->
+  <p class="section-label"><i class="ti ti-map-pin" aria-hidden="true"></i> Step 1 — choose a spot</p>
+  <div class="spot-grid" id="spot-grid"></div>
+
+  <!-- STEP 2: FISH -->
+  <div class="fish-section" id="fish-section">
+    <p class="section-label"><i class="ti ti-fish" aria-hidden="true"></i> Step 2 — what are you targeting?</p>
+    <div class="fish-grid" id="fish-grid"></div>
   </div>
 
-  <!-- Hatch Calendar -->
-  <div class="hatch-section">
-    <p class="section-title"><i class="ti ti-bug" aria-hidden="true"></i> Active hatches — May/June</p>
-    <div class="hatch-grid">
-      <div class="hatch-card">
-        <p class="hatch-name"><span class="hatch-active"></span>Midge</p>
-        <p class="hatch-detail">Year-round · #18–22<br>Griffith's Gnat, Zebra Midge</p>
-      </div>
-      <div class="hatch-card">
-        <p class="hatch-name"><span class="hatch-active"></span>Blue-Winged Olive (BWO)</p>
-        <p class="hatch-detail">Jan–May · #16–22<br>Parachute Adams, Sparkle Dun, RS2</p>
-      </div>
-      <div class="hatch-card">
-        <p class="hatch-name"><span class="hatch-active"></span>Caddis</p>
-        <p class="hatch-detail">May 15–Sep 30 · #10–18<br>Elk Hair Caddis, X-Caddis, Peacock Caddis</p>
-      </div>
-      <div class="hatch-card">
-        <p class="hatch-name"><span class="hatch-active"></span>Salmonfly / Stonefly</p>
-        <p class="hatch-detail">Jun 1–Jul 31 · #4–10<br>Sofa Pillow, Chubby Chernobyl, Stimulator</p>
-      </div>
-      <div class="hatch-card">
-        <p class="hatch-name"><span class="hatch-active"></span>PMD</p>
-        <p class="hatch-detail">Jun 1–Sep 30 · #14–18<br>Comparadun, Sparkle Dun</p>
-      </div>
-      <div class="hatch-card">
-        <p class="hatch-name"><span class="hatch-active"></span>Golden Stonefly</p>
-        <p class="hatch-detail">Jun 1–Jul 31 · #6–8<br>Golden Stone Nymph, Yellow Sally</p>
+  <!-- STEP 3: HOW TO -->
+  <div class="how-section" id="how-section">
+    <p class="section-label"><i class="ti ti-hook" aria-hidden="true"></i> Step 3 — how to catch it</p>
+    <div class="how-card" id="how-card"></div>
+  </div>
+
+  <!-- REFERENCE -->
+  <p class="section-label" style="margin-top:.5rem;"><i class="ti ti-book" aria-hidden="true"></i> Reference</p>
+  <div class="ref-grid">
+
+    <div class="ref-card">
+      <p class="ref-title"><i class="ti ti-moon"></i> Solunar windows this week</p>
+      <div style="overflow-x:auto;">
+        <table class="sol-table">
+          <thead><tr><th>Date</th><th>Major AM</th><th>Major PM</th><th>Minor PM</th></tr></thead>
+          <tbody>
+            <tr class="today"><td>Thu 28 <span class="moon-pill">Waxing</span></td><td>10:26–12:26</td><td class="dim">10:59 PM+</td><td>5:55–7:55</td></tr>
+            <tr><td>Fri 29 <span class="moon-pill">Full</span></td><td>11:11 AM–1:11</td><td class="dim">10:39 PM+</td><td>7:01–9:01</td></tr>
+            <tr><td>Sat 30 <span class="moon-pill">Full</span></td><td>11:58 AM–1:58</td><td class="dim">11:28 PM+</td><td>8:05–10:05</td></tr>
+            <tr><td>Sun 31 <span class="moon-pill">Full</span></td><td>12:46–2:46 PM</td><td class="dim">12:20 AM+</td><td>9:04–11:04</td></tr>
+            <tr><td>Mon Jun 1 <span class="moon-pill">Full</span></td><td>1:34–3:34 PM</td><td class="dim">1:12 AM+</td><td>9:55–11:55</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
+
+    <div class="ref-card">
+      <p class="ref-title"><i class="ti ti-bug"></i> Active hatches — May/June</p>
+      <div class="hatch-list">
+        <div class="hatch-row"><span class="hatch-dot active"></span><div><span class="hatch-name">Midge</span> <span class="hatch-detail">#18–22 · year-round · Griffith's Gnat, Zebra Midge</span></div></div>
+        <div class="hatch-row"><span class="hatch-dot active"></span><div><span class="hatch-name">Blue-Winged Olive (BWO)</span> <span class="hatch-detail">#16–22 · Jan–May · Parachute Adams, Sparkle Dun, RS2</span></div></div>
+        <div class="hatch-row"><span class="hatch-dot active"></span><div><span class="hatch-name">Caddis</span> <span class="hatch-detail">#10–18 · May 15–Sep · Elk Hair Caddis, X-Caddis</span></div></div>
+        <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">Salmonfly / Stonefly</span> <span class="hatch-detail">#4–10 · Jun–Jul · Sofa Pillow, Chubby Chernobyl</span></div></div>
+        <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">PMD</span> <span class="hatch-detail">#14–18 · Jun–Sep · Comparadun, Sparkle Dun</span></div></div>
+        <div class="hatch-row"><span class="hatch-dot soon"></span><div><span class="hatch-name">Golden Stonefly</span> <span class="hatch-detail">#6–8 · Jun–Jul · Golden Stone Nymph, Yellow Sally</span></div></div>
+      </div>
+    </div>
+
+    <div class="ref-card">
+      <p class="ref-title"><i class="ti ti-alert-triangle"></i> Key regulations</p>
+      <div class="reg-list">
+        <div class="reg-row"><i class="ti ti-x"></i><span class="reg-text"><strong>Teton River (above canyon)</strong> — closed Jun 1–30. Season Jul 1–Nov 30.</span></div>
+        <div class="reg-row"><i class="ti ti-x"></i><span class="reg-text"><strong>Sand Creek Ponds 3 &amp; 4</strong> — closed Jan 1–Jul 1 for waterfowl nesting.</span></div>
+        <div class="reg-row"><i class="ti ti-fish"></i><span class="reg-text"><strong>Cutthroat trout</strong> — mandatory catch-and-release on Teton + South Fork Snake. ID by red slash under jaw.</span></div>
+        <div class="reg-row"><i class="ti ti-fish"></i><span class="reg-text"><strong>Sturgeon</strong> — C&amp;R only. Cannot be removed from water. Barbless hooks required.</span></div>
+        <div class="reg-row"><i class="ti ti-package"></i><span class="reg-text"><strong>Live bait</strong> — no live fish, leeches, frogs, or salamanders. Live crayfish OK if caught on-site.</span></div>
+        <div class="reg-row"><i class="ti ti-package"></i><span class="reg-text"><strong>High-harvest</strong> — Brook trout 25/day · Whitefish 25/day · Walleye unlimited.</span></div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Key Regulations -->
-  <div class="regs-section">
-    <p class="section-title"><i class="ti ti-alert-triangle" aria-hidden="true"></i> Key regulations</p>
-    <div class="reg-row"><i class="ti ti-x reg-icon"></i><span class="reg-text"><strong>Teton River (above canyon)</strong> — closed June 1–30 for cutthroat spawning. Season runs July 1–Nov 30.</span></div>
-    <div class="reg-row"><i class="ti ti-x reg-icon"></i><span class="reg-text"><strong>Sand Creek Ponds 3 &amp; 4</strong> — closed Jan 1–July 1 for waterfowl nesting. Non-motorized boats allowed July 16–Apr 15.</span></div>
-    <div class="reg-row"><i class="ti ti-x reg-icon"></i><span class="reg-text"><strong>Sand Creek WMA (winter)</strong> — closed Jan 1–Apr 1 (some areas May 1) for wintering big game.</span></div>
-    <div class="reg-row"><i class="ti ti-fish reg-icon"></i><span class="reg-text"><strong>Yellowstone Cutthroat</strong> — mandatory catch-and-release on Teton River and South Fork Snake. ID by red/orange slash marks under jaw.</span></div>
-    <div class="reg-row"><i class="ti ti-fish reg-icon"></i><span class="reg-text"><strong>Sturgeon</strong> — catch-and-release only. Must not be removed from water. Barbless hooks + breakaway leader required.</span></div>
-    <div class="reg-row"><i class="ti ti-package reg-icon"></i><span class="reg-text"><strong>Live bait ban</strong> — no live fish, leeches, frogs, salamanders, waterdogs, or shrimp. Exception: crayfish caught on-site.</span></div>
-    <div class="reg-row"><i class="ti ti-package reg-icon"></i><span class="reg-text"><strong>High-limit species</strong> — Brook Trout: 25/day. Mountain Whitefish: 25/day. Walleye: no limits (harvest encouraged).</span></div>
-  </div>
-
-  <p class="footer">Data sourced from IDFG multi-year surveys &amp; hatch records. Always verify current regs at idfg.idaho.gov before fishing.</p>
+  <p class="footer">Based on IDFG multi-year survey data, hatch records, and regional stocking reports.<br>Always confirm current regulations at <a href="https://idfg.idaho.gov" style="color:var(--blue-tx);">idfg.idaho.gov</a> before fishing.</p>
 </div>
 
 <script>
 const SPOTS = [
   {
     id:'wakeside', name:'Wakeside Lake', type:'lake',
-    typeLabel:'Private spring-fed stillwater',
-    species:['bass','trout'],
-    speciesLabel:'Largemouth bass, rainbow trout',
-    times:['dawn','dusk'], timeLabel:'Dawn & late evening',
-    gear:'Wacky-rigged 4" Senko (green pumpkin) on size 1 wide-gap hook with O-ring. Or drop-shot Jackall Crosstail Shad in baby bass color.',
-    bait:'Soft plastics only — clear water requires finesse presentations. Weightless or drop-shot.',
-    access:'Bank access only. Day-use fee: $10 half-day / $20 full-day. High clarity (8–10 ft visibility).',
-    solunar:'Dawn peak (5–8 AM) = 100% activity. Late evening = 90% activity.',
-    alerts:[]
+    typeLabel:'Private spring-fed stillwater · in Rexburg',
+    alerts:[],
+    fish:[
+      {
+        id:'bass', name:'Largemouth Bass', sub:'Primary target',
+        ico:'ti-fish', color:'teal',
+        where:'Cast parallel to shoreline along weed lines, brush piles, and rocky structure. Clear water (8–10 ft visibility) means fish are spooky — stay back from the bank.',
+        rig:'Wacky rig (weightless) or drop-shot',
+        bait:'4" Yamamoto Senko in Green Pumpkin · Jackall Crosstail Shad (Baby Bass) · Roboworm 4.5" Straight Tail (Aaron\'s Pro Shad)',
+        gear:'Light spinning rod, 6–8 lb fluorocarbon. Size 1 finesse wide-gap hook with elastomer O-ring at center of worm.',
+        technique:'Cast parallel to shore. Let wacky rig fall slowly to bottom. Hop 1–2 ft, pause, let fall again. For drop-shot: walk slowly back with subtle rod-tip twitches near submerged brush.',
+        bestTime:'Dawn (5–8 AM) and late evening',
+        tip:'In clear water, downsize your leader and go natural colors. The O-ring prevents the hook tearing through the Senko on the strike.'
+      },
+      {
+        id:'trout-wakeside', name:'Rainbow Trout', sub:'Secondary target',
+        ico:'ti-fish', color:'blue',
+        where:'Mid-water column and near surface in cooler morning hours. The spring-fed clarity lets you sight-fish cruising trout.',
+        rig:'Slip bobber rig or small inline spinner',
+        bait:'Nightcrawler under slip bobber · PowerBait (rainbow or chartreuse) · small gold inline spinner',
+        gear:'Ultralight spin rod, 4–6 lb mono.',
+        technique:'Position bobber stop to suspend bait 2–4 ft down. Cast to open water areas away from bass structure. Retrieve spinner slow and steady just under the surface.',
+        bestTime:'Early morning when water is coolest',
+        tip:'Spring monitoring shows water averaging 59°F — trout are active and feeding aggressively in pre-spawn mode.'
+      }
+    ]
   },
   {
     id:'teton-upper', name:'Teton River — Upper Valley', type:'river',
-    typeLabel:'Low-gradient riverine corridor, Driggs to Felt',
-    species:['cutthroat','trout'],
-    speciesLabel:'Yellowstone cutthroat, brook trout',
-    times:['morning'], timeLabel:'Mid-morning PMD hatches (9 AM–12 PM)',
-    gear:'9-ft 5-weight fly rod. 4X–6X tapered leader. Comparadun, Sparkle Dun, foam hoppers.',
-    bait:'Fly fishing only. Current hatches: Midges (#18–22), BWOs (#16–22), Caddis (#10–18). Fish undercut willow banks and deep bends.',
-    access:'Wade access only. Wild cutthroat = catch-and-release mandatory. Avg 12–16" fish.',
-    solunar:'Major bite aligns with morning PMD windows today (10:26 AM–12:26 PM).',
-    alerts:['CLOSED June 1–30 for cutthroat spawning']
+    typeLabel:'Low-gradient corridor · Driggs to Felt Canyon',
+    alerts:['CLOSED June 1–30'],
+    fish:[
+      {
+        id:'cutthroat', name:'Yellowstone Cutthroat', sub:'Native · catch-and-release only',
+        ico:'ti-fish', color:'coral',
+        where:'Undercut willow banks, deep bends, and slow current seams. These fish average 12–16". Look for shade in midday.',
+        rig:'Dry fly or nymph under indicator',
+        bait:'Midges #18–22 · BWOs #16–22 · Caddis #10–18 · Comparadun or Sparkle Dun for PMDs',
+        gear:'9-ft 5-weight fly rod. Tapered 4X–6X leader. Match the hatch — check what\'s flying before you tie on.',
+        technique:'Present upstream, dead-drift through the seam. Approach from downstream, crouch low — cutthroat in clear water spook easily. Short casts outperform long ones here.',
+        bestTime:'Mid-morning PMD hatches (9 AM–12 PM). Major solunar today: 10:26 AM.',
+        tip:'Mandatory C&R on all cutthroat. ID by the bright red or orange slash marks under the jaw. Wet hands before handling.'
+      }
+    ]
   },
   {
     id:'teton-canyon', name:'Teton River — Felt Canyon', type:'river',
-    typeLabel:'High-gradient basalt canyon stretch',
-    species:['trout','brown'],
-    speciesLabel:'Wild rainbow, cutthroat-rainbow hybrids (cutt-bows)',
-    times:['dawn','dusk'], timeLabel:'Dawn & dusk peak windows',
-    gear:'5–6 weight fly rod. Stimulator, Elk Hair Caddis, streamers for bigger fish. Roll casts required.',
-    bait:'Fly fishing. Tight canyon walls limit backcast. Largest wild fish in the Teton drainage.',
-    access:'Limited road access. Wade only. Remote — plan with map and water shoes.',
-    solunar:'Best at dawn (major window 10:26 AM) and dusk. Overcast days = all-day feed.',
-    alerts:[]
+    typeLabel:'High-gradient basalt canyon · remote access',
+    alerts:[],
+    fish:[
+      {
+        id:'rainbow-canyon', name:'Wild Rainbow Trout', sub:'Largest fish in the Teton drainage',
+        ico:'ti-fish', color:'blue',
+        where:'Fast pocket water behind boulders, deep plunge pools, and undercut canyon walls. These are the biggest, wildest fish on the river.',
+        rig:'5–6 weight fly rod with streamers or large dry flies',
+        bait:'Stimulator #8–12 · Elk Hair Caddis #12–14 · Articulated streamer (black/olive) for big fish',
+        gear:'5–6 weight rod, 3X–4X tippet for streamers. Roll cast ability is essential — canyon walls restrict backcast.',
+        technique:'High-stick nymphing in plunge pools. Strip streamers across the current and let them swing. Present dry flies to any visible rise in the pocket water.',
+        bestTime:'Dawn and dusk. Overcast days produce all-day feeding.',
+        tip:'Limited road access — this section rewards the effort. Wade carefully on slick basalt. Plan your exit before fishing deep into the canyon.'
+      },
+      {
+        id:'cuttbow', name:'Cutthroat-Rainbow Hybrid (Cutt-bow)', sub:'Aggressive fighters',
+        ico:'ti-fish', color:'purple',
+        where:'Same runs as the wild rainbows but often in faster, shallower riffles. Very aggressive strikers.',
+        rig:'Large attractor dry fly or streamer',
+        bait:'Chubby Chernobyl #8–10 · Sofa Pillow #4–6 · Bright streamer patterns',
+        gear:'5-weight fly rod, 3X leader. These fish hit hard — don\'t go too light.',
+        technique:'Cover water fast with an attractor dry. Cutt-bows aren\'t as selective as pure cutthroat — confidence cast a Chernobyl along the bank.',
+        bestTime:'Midday when stoneflies are active (June+)',
+        tip:'When you hook one, be ready — cutt-bows run fast and jump. Keep your rod tip up.'
+      }
+    ]
   },
   {
     id:'ririe', name:'Ririe Reservoir', type:'lake',
-    typeLabel:'1,414-acre deep-water impoundment (~30 mi south)',
-    species:['kokanee','perch','trout'],
-    speciesLabel:'Kokanee salmon, yellow perch, tiger trout, smallmouth bass',
-    times:['dawn','afternoon'], timeLabel:'Dawn trolling & deep afternoon bites',
-    gear:'Clip-weight trolling rig: 20 ft line → clip weight (2–4 oz by depth) → 60–100 ft line → dodger → hoochie lure. Perch: bottom jig tipped with perch eye or belly.',
-    bait:'Hoochie + shoepeg corn scented with tuna/krill oil for kokanee. Perch school at 30–50 ft near Juniper ramp, shallower near Blacktail.',
-    access:'Concrete boat ramps at Juniper + Blacktail. Boarding docks. Good ice fishing in winter. Built 1975.',
-    solunar:'Dawn peak best for kokanee trolling at 20–40 ft depth.',
-    alerts:[]
+    typeLabel:'1,414-acre impoundment · ~30 miles south',
+    alerts:[],
+    fish:[
+      {
+        id:'kokanee', name:'Kokanee Salmon', sub:'Best trolled at depth',
+        ico:'ti-fish', color:'coral',
+        where:'Suspended in the water column at specific depth layers — not on the bottom. School behavior means when you find one, you find many.',
+        rig:'Clip-weight trolling rig with dodger + hoochie',
+        bait:'Synthetic hoochie lure (pink, red, or chrome) baited with shoepeg corn soaked in tuna or krill oil',
+        gear:'Medium rod in rod holder. Trolling speed 1.5–2 mph. Let out 20 ft line → clip weight → 60–100 ft more line → dodger → hoochie.',
+        technique:'20 ft depth: 2 oz clip weight + 60 ft line. 30 ft: 3 oz + 80 ft. 40 ft: 4 oz + 100 ft. Start at 20 ft and work deeper until you find the school. Mark depth on your fish finder.',
+        bestTime:'Dawn trolling (5–8 AM). Kokanee go deep midday.',
+        tip:'Kokanee have soft mouths — don\'t set the hook hard. Keep steady pressure and let the fish tire itself out.'
+      },
+      {
+        id:'perch', name:'Yellow Perch', sub:'Schools near bottom',
+        ico:'ti-fish', color:'amber',
+        where:'Juniper ramp area: 30–50 ft deep near the bottom. Blacktail area: shallower, under 30 ft. Perch school densely — vertical jigging works best.',
+        rig:'Fast-sinking jig or benthic bait rig',
+        bait:'Perch eye or belly meat on a small jig · Nightcrawler on bottom hook · Mealworms',
+        gear:'Light spinning rod, 4–6 lb mono. Small jig head (1/16–1/8 oz).',
+        technique:'Drop jig straight down to the bottom. Lift 6–12 inches, drop back. Repeat. Once you feel a bite, set quickly — perch steal bait fast. After catching one perch, harvest its eyes for bait. Perch are cannibalistic and will hit their own.',
+        bestTime:'Mid-morning through afternoon at depth.',
+        tip:'Keep your jig small and move it subtly. Perch in cold, clear water are line-shy — go light on the leader.'
+      },
+      {
+        id:'tiger-trout', name:'Tiger Trout', sub:'Brown ♀ × Brook ♂ hybrid',
+        ico:'ti-fish', color:'green',
+        where:'Rocky talus slopes, submerged brush lines, and canyon walls. Tiger trout are predatory and chase baitfish.',
+        rig:'Medium spinning rod with minnow plug or streamer',
+        bait:'Small minnow plug (shad or perch color) · White/chartreuse inline spinner · Live crayfish (caught on-site)',
+        gear:'Medium spin rod, 8–10 lb mono or fluoro. These fish hit hard.',
+        technique:'Cast to rocky structure and retrieve at medium speed. Vary retrieve cadence — tiger trout often strike on a pause. They\'re stocked specifically to control chubs and suckers, so match that forage.',
+        bestTime:'Dawn and late afternoon near structure.',
+        tip:'Over 2,200 tiger trout stocked here annually in late May. They\'re fresh, hungry, and aggressive right now.'
+      }
+    ]
   },
   {
     id:'southfork', name:'South Fork Snake — Lorenzo to Menan', type:'river',
-    typeLabel:'Warm, high-turbidity 8-mile stretch ("Section 5")',
-    species:['brown','trout','cutthroat'],
-    speciesLabel:'Trophy brown trout, rainbow, cutthroat',
-    times:['dusk','afternoon'], timeLabel:'Dusk & overcast afternoons',
-    gear:'Medium spin rod: trolled minnow plugs. Articulated black/olive streamers. Foam hopper late summer. Target deep outside bends and clay banks.',
-    bait:'Large browns hold in cottonwood logjams. Late summer: big fish migrate up from Henry\'s Fork seeking cooler water.',
-    access:'BLM Lorenzo boat ramp ($3 fee), day use only. Cutthroat: catch-and-release. 8 mi float to Menan.',
-    solunar:'Dusk minor bite window 5:55–7:55 PM is prime today.',
-    alerts:[]
+    typeLabel:'8-mile "Section 5" float · warm, high turbidity',
+    alerts:[],
+    fish:[
+      {
+        id:'brown', name:'Trophy Brown Trout', sub:'Dominant species here',
+        ico:'ti-fish', color:'amber',
+        where:'Deep outside bends, clay undercut banks, and cottonwood logjams. Browns sit in structure waiting for food to come to them. Cover water from a boat.',
+        rig:'Articulated streamer or large minnow plug',
+        bait:'Articulated streamer (black/olive, 4–6") · Trolled Rapala or minnow plug · Foam hopper (late summer)',
+        gear:'7–9 weight fly rod for streamers, or medium-heavy spin rod for plugs. 10–15 lb fluoro leader.',
+        technique:'Cast tight to the bank — within inches of the logjam or undercut. Strip streamer fast then pause. For spin: troll minnow plugs slow along clay banks. Late summer: big browns migrate up from Henry\'s Fork seeking cooler water.',
+        bestTime:'Dusk (6–9 PM) and overcast afternoons. Minor solunar today: 5:55–7:55 PM.',
+        tip:'This section runs warmer and cloudier than upstream — exactly what big browns prefer. The 8-mile float from Lorenzo boat ramp to Menan covers all the prime habitat.'
+      }
+    ]
   },
   {
     id:'sandcreek', name:'Sand Creek WMA — Pond 4', type:'lake',
-    typeLabel:'100-acre volcanic WMA stillwater (north of St. Anthony)',
-    species:['trout'],
-    speciesLabel:'Stocked triploid rainbow, wild brook trout',
-    times:['afternoon','dusk'], timeLabel:'Late afternoon (3–6 PM)',
-    gear:'Ultralight spin rod with gold inline spinners. Wet fly patterns from a float tube.',
-    bait:'Stocked triploid rainbows hit spinners and nightcrawlers reliably. Wild brook trout in shallower areas.',
-    access:'Concrete ramp + boarding dock. 25 primitive campsites ($10/night). Non-motorized boats July 16–Apr 15. Bear country — secure food.',
-    solunar:'Late afternoon minor window. Best pre-evening. Non-motorized only.',
-    alerts:['CLOSED Jan 1–July 1 for waterfowl nesting','Bear habitat — food storage required']
+    typeLabel:'100-acre volcanic stillwater · north of St. Anthony',
+    alerts:['CLOSED Jan 1–July 1','Bear habitat'],
+    fish:[
+      {
+        id:'rainbow-stocked', name:'Stocked Rainbow Trout', sub:'Triploid — grows fast, can\'t spawn',
+        ico:'ti-fish', color:'blue',
+        where:'Open water mid-depth and near any inflow structures. Stocked triploids distribute evenly — fan cast to cover water.',
+        rig:'Ultralight spin with inline spinner, or fly patterns from a float tube',
+        bait:'Gold inline spinner (Mepps or Panther Martin) · Nightcrawler · PowerBait (salmon egg or rainbow)',
+        gear:'Ultralight rod, 4–6 lb mono. Spinners in gold or silver.',
+        technique:'Retrieve spinner at consistent medium speed just below the surface. For bait: cast to open water, let it sink to mid-depth, slow retrieve back. Float tube lets you access the whole pond.',
+        bestTime:'Late afternoon 3–6 PM.',
+        tip:'Triploid rainbows grow faster because they don\'t spawn — they channel all energy into size. Expect larger-than-average stocked fish.'
+      },
+      {
+        id:'brook', name:'Wild Brook Trout', sub:'Shallower areas and inlets',
+        ico:'ti-fish', color:'teal',
+        where:'Shallower coves, near any spring inflows, and along weed edges. Brook trout prefer cooler water than rainbows.',
+        rig:'Wet fly under an indicator or small inline spinner',
+        bait:'Soft hackle wet fly · small Wooly Bugger · worm on a drop-shot',
+        gear:'Ultralight rod or 3-weight fly rod. 4X tippet for flies.',
+        technique:'Dead drift wet flies near the bottom in shallower areas. Brook trout hit aggressively — no need for a subtle presentation.',
+        bestTime:'Morning and late afternoon.',
+        tip:'Brook trout have a daily bag limit of 25 — you can keep a lot. Great eating fish.'
+      }
+    ]
   },
   {
     id:'warmriver', name:'Warm River', type:'river',
-    typeLabel:'Geothermal spring-fed Henry\'s Fork tributary',
-    species:['trout','brown'],
-    speciesLabel:'Brook trout, rainbow trout, mountain whitefish',
-    times:['morning','afternoon'], timeLabel:'Midday (stable temps year-round)',
-    gear:'3-weight fly rod. Zebra Midges (#18–22) deep under an indicator. Single dry attractor flies work surface.',
-    bait:'Spring-fed stability means productive in winter when other streams blow out. Wild fish in canyon; hatchery rainbows near campground.',
-    access:'Accessible from Warm River Campground near Ashton. Wading required. Year-round fishery.',
-    solunar:'Thermal stability makes this productive across the full day. Best on cold or overcast days.',
-    alerts:[]
+    typeLabel:'Geothermal spring-fed tributary · near Ashton',
+    alerts:[],
+    fish:[
+      {
+        id:'rainbow-warm', name:'Rainbow Trout', sub:'Hatchery near campground, wild upstream',
+        ico:'ti-fish', color:'blue',
+        where:'Lower canyon near Warm River Campground: stocked hatchery fish in accessible runs. Upper canyon: wild, selective fish in clear spring water.',
+        rig:'3-weight fly rod — nymph under indicator or dry fly',
+        bait:'Zebra Midge #18–22 (black with silver rib) · RS2 · small Parachute Adams · single dry attractor fly',
+        gear:'3-weight fly rod, 5X–6X tippet. Delicate presentation needed for wild fish.',
+        technique:'Nymph deep under a small indicator — geothermal springs keep water cold and fish hug the bottom. Dead-drift through the main current seam. For dry fly: cast upstream and let it ride with no drag.',
+        bestTime:'Midday — stable thermal temps make this productive all day when other rivers are too cold or blown out.',
+        tip:'This is Idaho\'s best cold-weather fishery. When spring runoff blows out the Teton, Warm River is clear and fishable. Year-round access.'
+      }
+    ]
   },
   {
     id:'henryfork', name:'Henry\'s Fork — Beaver Dick Park', type:'river',
-    typeLabel:'World-class tailwater / freestone hybrid',
-    species:['trout','brown','cutthroat'],
-    speciesLabel:'Brown trout, rainbow, cutthroat, mountain whitefish',
-    times:['dawn','dusk'], timeLabel:'Dawn & dusk feeding windows',
-    gear:'5–6 weight fly rod. PMD Comparadun, Elk Hair Caddis, large streamer for brown trout at dusk. Slow-moving deep gravel runs.',
-    bait:'High-volume, slow current past deep gravel bars. Mid-summer: cold undercurrents = shade for trout. Heavy mosquito activity in slough.',
-    access:'4.5 miles west of Rexburg on Hwy 33. 400 acres of BLM/Shoshone-Bannock public land.',
-    solunar:'Dawn major window 10:26 AM–12:26 PM. Evening minor 5:55–7:55 PM.',
-    alerts:[]
+    typeLabel:'World-class tailwater · 4.5 mi west of Rexburg',
+    alerts:[],
+    fish:[
+      {
+        id:'brown-henry', name:'Brown Trout', sub:'Best at dusk with streamers',
+        ico:'ti-fish', color:'amber',
+        where:'Deep gravel bars, slow-water eddies, and undercut bank structure. Big browns go nocturnal in summer — focus your effort at the tail end of the day.',
+        rig:'Large streamer on 7–8 weight fly rod, or trolled minnow plug',
+        bait:'Articulated streamer (brown, black, or olive) · Sculpin pattern · Large Wooly Bugger #4–6',
+        gear:'7–8 weight fly rod, 2X–3X leader. Stripping basket helps manage line.',
+        technique:'Cast across-stream at dusk, let streamer swing downstream, then strip back in short, aggressive pulses. Browns hit on the swing or on the first strip. Fish the last hour of light hard.',
+        bestTime:'Dusk. Minor solunar today: 5:55–7:55 PM.',
+        tip:'400 acres of BLM public land gives excellent access. Mid-summer afternoon: fish hold deep in cold undercurrents — switch to deep nymphing until evening.'
+      },
+      {
+        id:'rainbow-henry', name:'Rainbow Trout', sub:'Mid-morning dry fly',
+        ico:'ti-fish', color:'blue',
+        where:'Main channel current seams and gravel bar tailouts. High-volume slow current — trout have time to inspect flies.',
+        rig:'5-weight fly rod, dry fly or PMD nymph',
+        bait:'PMD Comparadun #14–16 · Elk Hair Caddis #14 · Parachute Adams #14–18',
+        gear:'9-ft 5-weight, 5X tippet for dries. Henry\'s Fork fish are known for being selective.',
+        technique:'Long, drag-free drift is everything. Use a reach cast or pile cast to get extra drift time. Present from downstream and below. Match the hatch exactly — size matters more than pattern.',
+        bestTime:'Mid-morning solunar window today: 10:26 AM–12:26 PM.',
+        tip:'The Henry\'s Fork is world-renowned for technical dry fly fishing. If fish aren\'t rising, nymph a two-fly rig (midge + BWO) through the seams.'
+      }
+    ]
   },
   {
     id:'cityponds', name:'Rexburg City Ponds', type:'lake',
-    typeLabel:'6.5-acre municipal park waterbody (in-town)',
-    species:['trout','perch'],
-    speciesLabel:'Triploid rainbow trout, channel catfish, yellow perch',
-    times:['dusk','afternoon'], timeLabel:'Evening twilight (5–8 PM)',
-    gear:'Ultralight spin tackle. Slip bobber + nightcrawler. Or benthic marshmallow/egg rig (floats bait off muddy bottom).',
-    bait:'"Family Fishing Waters" — no gear or bait restrictions. Smaller pond reserved for kids under 14.',
-    access:'Walking paths, handicap-accessible restrooms in Rexburg Nature Park. High pressure fishery but frequently stocked.',
-    solunar:'Evening minor window (5:55–7:55 PM) ideal for stocked trout at dusk.',
-    alerts:[]
+    typeLabel:'6.5-acre municipal park · no gear restrictions',
+    alerts:[],
+    fish:[
+      {
+        id:'rainbow-city', name:'Rainbow Trout', sub:'Stocked triploids · Family Fishing Waters',
+        ico:'ti-fish', color:'blue',
+        where:'Open water throughout both ponds. Stocked fish distribute near any cover — dock edges, the connecting channel, or any deeper holes.',
+        rig:'Slip bobber + nightcrawler, OR benthic bait rig',
+        bait:'Nightcrawler under a bobber · Marshmallow + salmon egg combo · PowerBait (any color) · Mealworms',
+        gear:'Ultralight spin rod, 4 lb mono. No gear or bait restrictions on these ponds.',
+        technique:'Slip bobber: set depth to 2–4 ft and cast to open water. Let the bobber drift. Bottom rig: slide an egg sinker onto main line, tie on barrel swivel, attach 18" leader with hook. Bait with nightcrawler + marshmallow — the marshmallow floats the bait off the muddy bottom and makes it visible.',
+        bestTime:'Evening twilight (5–8 PM). Minor solunar today: 5:55–7:55 PM.',
+        tip:'Smaller pond is reserved for kids under 14. Great spot for beginners — high stocking rate means consistent action. Handicap-accessible walking paths throughout.'
+      },
+      {
+        id:'catfish', name:'Channel Catfish', sub:'Bottom feeder · evenings',
+        ico:'ti-fish', color:'gray',
+        where:'Deep holes and near any structure on the bottom. Catfish are most active at night and dusk.',
+        rig:'Heavy bottom rig with stout hook',
+        bait:'Chicken liver · nightcrawler · stink bait · cut bait',
+        gear:'Medium spin rod, 10–15 lb line. Stout size 2/0–4/0 hook.',
+        technique:'Cast to any deep hole or near the bottom of deeper areas. Let it sit — catfish find food by smell, not sight. Give it 15–20 minutes before moving.',
+        bestTime:'Evening into dark.',
+        tip:'No gear restrictions on these ponds. Catfish are excellent eating and make a great target if the trout are slow.'
+      }
+    ]
   },
   {
     id:'southcanal', name:'South Branch Rexburg Canal', type:'canal',
-    typeLabel:'High-flow irrigation canal (Madison County)',
-    species:['trout','perch'],
-    speciesLabel:'Rainbow trout, yellow perch, smallmouth bass',
-    times:['dawn'], timeLabel:'Dawn peak (5–8 AM)',
-    gear:'Floating bait rigs, inline spinners, or bottom-bounced nightcrawlers at road crossings.',
-    bait:'Connected to South Fork Teton River — wild trout, perch, and bass move in seasonally. Also Texas Slough and Bannock Jim Slough nearby.',
-    access:'Road crossings and bridge rights-of-way (Texas Slough Canal Bridge, S.Fk. Teton River Bridge, Rexburg Canal Bridge). Verify property lines.',
-    solunar:'Best at early dawn (5–8 AM) before solar pressure pushes fish to structure.',
-    alerts:[]
+    typeLabel:'Irrigation canal · accessible via road crossings',
+    alerts:[],
+    fish:[
+      {
+        id:'trout-canal', name:'Rainbow Trout', sub:'Wild fish from Teton River',
+        ico:'ti-fish', color:'blue',
+        where:'Fish stack near road crossings, bridge shadows, and any current breaks. Canal fish move seasonally in from the South Fork Teton.',
+        rig:'Floating bait rig or inline spinner',
+        bait:'Nightcrawler on a floating rig · Berkley PowerBait · small gold spinner',
+        gear:'Light spin rod, 6 lb mono. Keep it simple for canal access.',
+        technique:'Cast upstream from a bridge crossing, let bait drift through the bridge shadow. Spinners: cast downstream at an angle, retrieve across current. Work every crossing before moving to the next.',
+        bestTime:'Early dawn (5–8 AM) before solar pressure pushes fish to cover.',
+        tip:'Verify property boundaries before leaving bridge rights-of-way. Texas Slough and Bannock Jim Slough nearby also worth hitting for perch.'
+      }
+    ]
   }
 ];
 
-function renderCards() {
-  const t = document.getElementById('filt-type').value;
-  const s = document.getElementById('filt-species').value;
-  const tm = document.getElementById('filt-time').value;
-  const container = document.getElementById('cards');
-  const countEl = document.getElementById('result-count');
+const FISH_COLORS = {
+  blue:   {bg:'var(--blue-bg)',   tx:'var(--blue-tx)'},
+  teal:   {bg:'var(--teal-bg)',   tx:'var(--teal-tx)'},
+  amber:  {bg:'var(--amber-bg)',  tx:'var(--amber-tx)'},
+  coral:  {bg:'var(--coral-bg)',  tx:'var(--coral-tx)'},
+  green:  {bg:'var(--green-bg)',  tx:'var(--green-tx)'},
+  purple: {bg:'var(--purple-bg)', tx:'var(--purple-tx)'},
+  gray:   {bg:'var(--bg2)',       tx:'var(--tx2)'},
+};
 
-  const filtered = SPOTS.filter(spot => {
-    if (t !== 'all' && spot.type !== t) return false;
-    if (s !== 'all' && !spot.species.includes(s)) return false;
-    if (tm !== 'all' && !spot.times.includes(tm)) return false;
-    return true;
+let selectedSpot = null;
+let selectedFish = null;
+
+function setStep(n) {
+  [1,2,3].forEach(i => {
+    const el = document.getElementById('step'+i);
+    el.classList.toggle('active', i <= n);
   });
+}
 
-  countEl.textContent = filtered.length + ' spot' + (filtered.length !== 1 ? 's' : '') + ' shown';
-
-  if (filtered.length === 0) {
-    container.innerHTML = '<p class="empty">No spots match — try broadening your filters.</p>';
-    return;
-  }
-
-  container.innerHTML = filtered.map(spot => {
-    const iconMap = { river: 'ti-wave-sine', lake: 'ti-ripple', canal: 'ti-current-location' };
-    return `
-      <div class="card" id="card-${spot.id}" onclick="toggle('${spot.id}')">
-        <div class="card-head">
-          <div class="card-icon ${spot.type}"><i class="ti ${iconMap[spot.type]}" aria-hidden="true"></i></div>
-          <div>
-            <p class="card-name">${spot.name}</p>
-            <p class="card-type">${spot.typeLabel}</p>
-          </div>
+function buildSpots() {
+  const grid = document.getElementById('spot-grid');
+  const iconMap = {river:'ti-wave-sine', lake:'ti-ripple', canal:'ti-current-location'};
+  grid.innerHTML = SPOTS.map(s => `
+    <button class="spot-btn" id="spot-${s.id}" onclick="pickSpot('${s.id}')">
+      <div class="spot-btn-head">
+        <div class="spot-icon ${s.type}"><i class="ti ${iconMap[s.type]}" aria-hidden="true"></i></div>
+        <div>
+          <p class="spot-name">${s.name}</p>
+          <p class="spot-type">${s.typeLabel}</p>
         </div>
-        <div class="badges">
-          <span class="badge species"><i class="ti ti-fish" style="font-size:11px"></i> ${spot.speciesLabel}</span>
-          <span class="badge time"><i class="ti ti-clock" style="font-size:11px"></i> ${spot.timeLabel}</span>
-          ${spot.alerts.map(a => `<span class="badge alert"><i class="ti ti-alert-triangle" style="font-size:11px"></i> ${a}</span>`).join('')}
-        </div>
-        <div class="detail">
-          <div class="detail-row"><i class="ti ti-tool" aria-hidden="true"></i><span class="detail-label">Gear</span><span class="detail-val">${spot.gear}</span></div>
-          <div class="detail-row"><i class="ti ti-fish" aria-hidden="true"></i><span class="detail-label">Bait / fly</span><span class="detail-val">${spot.bait}</span></div>
-          <div class="detail-row"><i class="ti ti-map-pin" aria-hidden="true"></i><span class="detail-label">Access</span><span class="detail-val">${spot.access}</span></div>
-          <div class="detail-row"><i class="ti ti-moon" aria-hidden="true"></i><span class="detail-label">Solunar</span><span class="detail-val">${spot.solunar}</span></div>
-        </div>
-        <p class="expand-hint" id="hint-${spot.id}">tap to expand</p>
       </div>
+      <div class="spot-chips">
+        <span class="chip fish"><i class="ti ti-fish" style="font-size:10px"></i> ${s.fish.map(f=>f.name).join(' · ')}</span>
+        ${s.alerts.map(a=>`<span class="chip alert"><i class="ti ti-alert-triangle" style="font-size:10px"></i> ${a}</span>`).join('')}
+      </div>
+    </button>
+  `).join('');
+}
+
+function pickSpot(id) {
+  selectedSpot = SPOTS.find(s => s.id === id);
+  selectedFish = null;
+
+  document.querySelectorAll('.spot-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('spot-'+id).classList.add('selected');
+
+  buildFish(selectedSpot);
+  document.getElementById('fish-section').style.display = 'block';
+  document.getElementById('how-section').style.display = 'none';
+  setStep(2);
+
+  setTimeout(() => {
+    document.getElementById('fish-section').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 80);
+}
+
+function buildFish(spot) {
+  const grid = document.getElementById('fish-grid');
+  grid.innerHTML = spot.fish.map(f => {
+    const c = FISH_COLORS[f.color] || FISH_COLORS.blue;
+    return `
+      <button class="fish-btn" id="fish-${f.id}" onclick="pickFish('${f.id}')">
+        <div class="fish-ico" style="background:${c.bg};color:${c.tx};"><i class="ti ${f.ico}" aria-hidden="true"></i></div>
+        <div>
+          <p class="fish-label">${f.name}</p>
+          <p class="fish-sub">${f.sub}</p>
+        </div>
+      </button>
     `;
   }).join('');
 }
 
-function toggle(id) {
-  const card = document.getElementById('card-' + id);
-  const hint = document.getElementById('hint-' + id);
-  card.classList.toggle('open');
-  hint.textContent = card.classList.contains('open') ? 'tap to collapse' : 'tap to expand';
+function pickFish(id) {
+  if (!selectedSpot) return;
+  selectedFish = selectedSpot.fish.find(f => f.id === id);
+
+  document.querySelectorAll('.fish-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('fish-'+id).classList.add('selected');
+
+  buildHowTo(selectedFish, selectedSpot);
+  document.getElementById('how-section').style.display = 'block';
+  setStep(3);
+
+  setTimeout(() => {
+    document.getElementById('how-section').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 80);
 }
 
-renderCards();
+function buildHowTo(fish, spot) {
+  const c = FISH_COLORS[fish.color] || FISH_COLORS.blue;
+  const card = document.getElementById('how-card');
+  card.innerHTML = `
+    <div class="how-header">
+      <div class="how-fish-ico" style="background:${c.bg};color:${c.tx};"><i class="ti ${fish.ico}" aria-hidden="true"></i></div>
+      <div>
+        <p class="how-fish-name">${fish.name}</p>
+        <p class="how-fish-at"><i class="ti ti-map-pin" style="font-size:11px;vertical-align:-1px;"></i> ${spot.name}</p>
+      </div>
+    </div>
+    <div class="how-body">
+      <div class="how-row">
+        <div class="how-icon-wrap"><i class="ti ti-map" aria-hidden="true"></i></div>
+        <div class="how-col">
+          <p class="how-label">Where to find them</p>
+          <p class="how-val">${fish.where}</p>
+        </div>
+      </div>
+      <div class="how-row">
+        <div class="how-icon-wrap"><i class="ti ti-hook" aria-hidden="true"></i></div>
+        <div class="how-col">
+          <p class="how-label">Rig</p>
+          <p class="how-val"><strong>${fish.rig}</strong></p>
+        </div>
+      </div>
+      <div class="how-row">
+        <div class="how-icon-wrap"><i class="ti ti-fish" aria-hidden="true"></i></div>
+        <div class="how-col">
+          <p class="how-label">Bait / fly / lure</p>
+          <p class="how-val">${fish.bait.split(' · ').map(b=>`<span class="tag">${b}</span>`).join('')}</p>
+        </div>
+      </div>
+      <div class="how-row">
+        <div class="how-icon-wrap"><i class="ti ti-tool" aria-hidden="true"></i></div>
+        <div class="how-col">
+          <p class="how-label">Gear setup</p>
+          <p class="how-val">${fish.gear}</p>
+        </div>
+      </div>
+      <div class="how-row">
+        <div class="how-icon-wrap"><i class="ti ti-hand-finger" aria-hidden="true"></i></div>
+        <div class="how-col">
+          <p class="how-label">Technique</p>
+          <p class="how-val">${fish.technique}</p>
+        </div>
+      </div>
+      <div class="how-row">
+        <div class="how-icon-wrap"><i class="ti ti-clock" aria-hidden="true"></i></div>
+        <div class="how-col">
+          <p class="how-label">Best time</p>
+          <p class="how-val">${fish.bestTime}</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <i class="ti ti-bulb"></i>
+        <span>${fish.tip}</span>
+      </div>
+    </div>
+  `;
+}
+
+buildSpots();
 </script>
 </body>
 </html>
